@@ -1,67 +1,105 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Navbar = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeNav, setActiveNav] = useState("Home");
+
+  const navLinks = [
+    { name: "Home", href: "#home" },
+    { name: "About Us", href: "#about" },
+    { name: "Programs", href: "#programs" },
+    { name: "Enrollment", href: "#enrollment" },
+    { name: "Contact Us", href: "#contact" },
+  ];
+
   return (
-    <nav className="w-full flex items-center justify-between px-6 py-5 max-w-7xl mx-auto">
-      {/* Brand Logo */}
-      <div className="flex items-center gap-0.5 text-2xl font-extrabold tracking-tight text-gray-900 cursor-pointer">
-        <span>Flynext</span>
-        <span className="text-amber-500 text-3xl leading-none">+</span>
-      </div>
+    <header className="w-full bg-white border-b border-gray-100 sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav className="flex items-center justify-between h-20">
+          
+          {/* Logo */}
+          <a href="#home" className="flex items-center gap-3">
+            <div className="w-9 h-9 rounded-full bg-[#1D61E7] flex items-center justify-center text-white shadow-md shadow-blue-500/20">
+              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
+              </svg>
+            </div>
+            <span className="text-xl font-bold tracking-tight text-slate-900">
+              Aviate Academy
+            </span>
+          </a>
 
-      {/* Navigation Links */}
-      <div className="hidden lg:flex items-center gap-8 text-xs font-semibold text-gray-700 uppercase tracking-wide">
-        <a href="#home" className="hover:text-amber-600 transition-colors">
-          Home
-        </a>
-        <a href="#pages" className="hover:text-amber-600 transition-colors">
-          Pages
-        </a>
-        <a href="#blog" className="hover:text-amber-600 transition-colors">
-          Blog
-        </a>
-        <a href="#about" className="hover:text-amber-600 transition-colors">
-          About Us
-        </a>
-        <a href="#fleet" className="hover:text-amber-600 transition-colors">
-          Our Fleet
-        </a>
-        <a href="#contacts" className="hover:text-amber-600 transition-colors">
-          Contacts
-        </a>
-      </div>
+          {/* Clean Navigation Links */}
+          <div className="hidden md:flex items-center gap-9">
+            {navLinks.map((link) => {
+              const isActive = activeNav === link.name;
+              return (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setActiveNav(link.name)}
+                  className={`text-sm font-medium transition-colors duration-200 ${
+                    isActive
+                      ? "text-[#1D61E7] font-semibold"
+                      : "text-gray-600 hover:text-[#1D61E7]"
+                  }`}
+                >
+                  {link.name}
+                </a>
+              );
+            })}
+          </div>
 
-      {/* Right Action Items */}
-      <div className="flex items-center gap-5">
-        <a
-          href="mailto:contact@flynext.com"
-          className="hidden md:flex items-center gap-2 text-xs font-semibold text-gray-800 hover:text-amber-600 transition-colors"
-        >
-          <svg
-            className="w-4 h-4 text-amber-600"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-            />
-          </svg>
-          contact@flynext.com
-        </a>
+          {/* CTA Button */}
+          <div className="hidden md:block">
+            <button className="bg-[#1D61E7] hover:bg-blue-700 text-white text-sm font-semibold px-6 py-2.5 rounded-xl shadow-sm transition-all duration-200 hover:shadow-md active:scale-95">
+              Apply Now
+            </button>
+          </div>
 
-        <button className="flex items-center gap-2 bg-[#e4caa3] hover:bg-[#d8bb90] text-gray-900 font-bold px-5 py-2.5 rounded-full text-xs tracking-wider uppercase transition duration-200 shadow-sm">
-          APPLY ONLINE
-        </button>
+          {/* Mobile Toggle */}
+          <div className="md:hidden flex items-center">
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="text-gray-700 hover:text-blue-600 focus:outline-none p-1"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {mobileMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
+          </div>
+        </nav>
+
+        {/* Mobile Dropdown */}
+        {mobileMenuOpen && (
+          <div className="md:hidden py-4 border-t border-gray-100 space-y-3">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={() => {
+                  setActiveNav(link.name);
+                  setMobileMenuOpen(false);
+                }}
+                className={`block text-sm font-medium ${
+                  activeNav === link.name ? "text-[#1D61E7] font-semibold" : "text-gray-600"
+                }`}
+              >
+                {link.name}
+              </a>
+            ))}
+            <button className="w-full bg-[#1D61E7] text-white text-sm font-semibold py-2.5 rounded-xl shadow-sm mt-2">
+              Apply Now
+            </button>
+          </div>
+        )}
       </div>
-    </nav>
+    </header>
   );
 };
 
-
 export default Navbar;
-
-
