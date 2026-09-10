@@ -4,55 +4,26 @@ export const courses = [
   {
     id: "01",
     slug: "cabin-crew",
-    title: "Cabin Crew",
+    title: "Cabin Crew Training",
     heroHeading: "CABIN CREW",
-    headline: "TURN YOUR PASSION FOR PEOPLE INTO A CAREER IN THE SKIES.",
+    headline:
+      "LAUNCH YOUR AVIATION CAREER WITH CABIN CREW TRAINING.",
     desktopImage: "/img1.png",
     mobileImage: "/img1-mobile.png",
     overview:
-      "Our comprehensive Cabin Crew training program is designed to transform ambitious individuals into world-class aviation professionals. You will learn the delicate balance of exceptional customer service, stringent safety protocols, and emergency management.",
-    learningAreas: [
-      "In-flight Service & Hospitality",
-      "Aviation Safety & Emergency Procedures",
-      "Professional Grooming & Etiquette",
-      "Personality Development & Communication",
-    ],
-    eligibility: [
-      {
-        title: "Education",
-        desc: "10+2 from a recognized board or university.",
-      },
-      { title: "Age", desc: "17 to 27 years at the time of admission." },
-      {
-        title: "Medical",
-        desc: "Physically fit with unblemished complexion. Minimum height requirements apply.",
-      },
-      { title: "Language", desc: "Fluency in English and Hindi." },
-    ],
+      "Gain practical inflight service, safety protocols, and passenger handling skills at Aviate Academy. Prepare for international airline interviews with industry-focused training.",
   },
   {
     id: "02",
     slug: "airport-ground-operations",
     title: "Airport Ground Operations",
     heroHeading: "AIRPORT GROUND OPERATIONS",
-    headline: "THE PEOPLE BEHIND EVERY SUCCESSFUL TAKEOFF.",
+    headline: "MASTER AIRPORT GROUND OPERATIONS & TERMINAL SERVICES.",
     desktopImage: "/img2.png",
     mobileImage: "/img2-mobile.png",
     overview:
-      "Ground operations are the backbone of the aviation industry. This program equips you with the technical and operational knowledge required to manage terminal operations, ramp handling, and passenger services with precision.",
-    learningAreas: [
-      "Passenger & Baggage Handling",
-      "Ramp Operations & Safety",
-      "Aviation Security Awareness",
-      "Dangerous Goods Regulations",
-    ],
-    eligibility: [
-      { title: "Education", desc: "10+2 or equivalent in any stream." },
-      { title: "Age", desc: "18 to 28 years." },
-      { title: "Language", desc: "Basic proficiency in English." },
-    ],
+      "Learn essential ground handling, passenger servicing, and airport safety procedures. Build a strong operational foundation with our expert-led aviation academy programs.",
   },
-  
 ];
 
 const HeroSection = ({ courseData = courses }) => {
@@ -89,13 +60,13 @@ const HeroSection = ({ courseData = courses }) => {
             >
               {/* Mobile Image */}
               <img
-                src={course.mobileImage || course.image}
+                src={course.mobileImage || course.desktopImage}
                 alt={course.title}
                 className="block sm:hidden w-full h-full object-cover object-center"
               />
               {/* Desktop Image */}
               <img
-                src={course.desktopImage || course.image}
+                src={course.desktopImage}
                 alt={course.title}
                 className="hidden sm:block w-full h-full object-cover object-center"
               />
@@ -107,7 +78,6 @@ const HeroSection = ({ courseData = courses }) => {
 
         {/* Hero Content Overlay */}
         <div className="relative z-10 w-full flex flex-col justify-end p-6 sm:p-10 lg:p-14">
-          {/* Main Content Area */}
           <div className="max-w-xl text-white pt-6">
             <div className="relative min-h-[140px] sm:min-h-[150px]">
               {courseData.map((course) => {
@@ -136,9 +106,6 @@ const HeroSection = ({ courseData = courses }) => {
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 mt-6 sm:mt-8">
-              <button className="w-full sm:w-auto text-center border border-white/30 bg-white/10 hover:bg-white/20 text-white backdrop-blur-md font-semibold px-6 py-3.5 sm:py-3 rounded-xl text-xs sm:text-sm transition-all duration-200 active:scale-[0.98]">
-                Book Your Free Flight
-              </button>
               <button className="w-full sm:w-auto text-center bg-[#1D61E7] hover:bg-blue-700 text-white font-semibold px-6 py-3.5 sm:py-3 rounded-xl text-xs sm:text-sm transition-all duration-200 shadow-lg shadow-blue-600/30 active:scale-[0.98]">
                 Start Your Journey
               </button>
@@ -146,8 +113,6 @@ const HeroSection = ({ courseData = courses }) => {
           </div>
         </div>
       </div>
-
-      
     </section>
   );
 };

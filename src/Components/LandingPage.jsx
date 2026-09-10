@@ -1,5 +1,6 @@
 import Navbar from '../Router/Navbar'
 import HeroSection from './HeroSection'
+import TrainingPrograms from './TrainingPrograms'
 
 
 const LandingPage = () => {
@@ -7,6 +8,7 @@ const LandingPage = () => {
     <div>
       <Navbar/>
       <HeroSection/>
+      <TrainingPrograms/>
 
     </div>
   )
