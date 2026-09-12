@@ -142,33 +142,35 @@ function Icon({ name, className }) {
 
 export default function CredentialsSection() {
   return (
-    <section className="relative w-full py-20 md:py-28 px-4 sm:px-6 md:px-12 bg-[#04213c] overflow-hidden">
+    <section className="relative w-full py-20 md:py-28 px-4 sm:px-6 md:px-12 bg-white text-slate-900 overflow-hidden">
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');`}</style>
 
-      {/* Blueprint grid texture — instrument-panel feel, grounded in the subject */}
+      {/* Subtle light ambient glow */}
+      <div className="absolute top-0 left-1/4 w-[36rem] h-[36rem] bg-sky-100/60 rounded-full blur-[128px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[30rem] h-[30rem] bg-orange-100/50 rounded-full blur-[128px] pointer-events-none" />
+
+      {/* Light blueprint grid texture */}
       <div
-        className="absolute inset-0 opacity-[0.05] pointer-events-none"
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)",
-          backgroundSize: "56px 56px",
+            "linear-gradient(rgba(0,0,0,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.8) 1px, transparent 1px)",
+          backgroundSize: "48px 48px",
         }}
       />
-      {/* single bold accent glow */}
-      <div className="absolute -top-24 -right-24 w-[26rem] h-[26rem] bg-[#f05123]/[0.12] rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto z-10">
         {/* Header row */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14 md:mb-20">
           <div className="max-w-xl">
             <span
-              className="inline-block text-sm font-medium text-[#f05123] mb-4"
+              className="inline-block text-xs font-bold uppercase tracking-widest text-[#f05123] mb-4"
               style={{ fontFamily: '"Inter", sans-serif' }}
             >
               Why train here
             </span>
             <h2
-              className="text-4xl sm:text-5xl md:text-6xl font-semibold text-white tracking-tight leading-[1.05]"
+              className="text-4xl sm:text-5xl md:text-6xl font-semibold text-slate-900 tracking-tight leading-[1.05]"
               style={{ fontFamily: '"Space Grotesk", sans-serif' }}
             >
               Built like a real airline
@@ -177,7 +179,7 @@ export default function CredentialsSection() {
             </h2>
           </div>
           <p
-            className="text-slate-400 text-sm sm:text-base leading-relaxed max-w-xs md:text-right"
+            className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-xs md:text-right"
             style={{ fontFamily: '"Inter", sans-serif' }}
           >
             Every credential below is something you'll actually be asked about
@@ -185,57 +187,57 @@ export default function CredentialsSection() {
           </p>
         </div>
 
-        {/* Feature cards — glass panels with a numeral watermark and a gold-lined icon ring */}
+        {/* Feature cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
           {features.map((item, idx) => (
             <div
               key={idx}
-              className="group relative overflow-hidden rounded-[28px] p-8 md:p-10 border border-white/10 bg-gradient-to-b from-white/[0.05] to-white/[0.02] backdrop-blur-sm transition-all duration-500 hover:border-[#f05123]/30 hover:from-white/[0.07]"
+              className="group relative overflow-hidden rounded-[28px] p-8 md:p-10 border border-slate-200/80 bg-slate-50/50 hover:bg-white backdrop-blur-md transition-all duration-500 hover:border-[#f05123]/40 hover:shadow-xl shadow-sm"
               style={{ fontFamily: '"Inter", sans-serif' }}
             >
-              {/* watermark numeral */}
+              {/* Watermark numeral */}
               <span
-                className="pointer-events-none absolute -top-3 right-5 text-[6.5rem] leading-none font-semibold text-white/[0.045] group-hover:text-[#f05123]/[0.08] transition-colors duration-500 select-none"
+                className="pointer-events-none absolute -top-3 right-5 text-[6.5rem] leading-none font-semibold text-slate-200/70 group-hover:text-[#f05123]/10 transition-colors duration-500 select-none"
                 style={{ fontFamily: '"Space Grotesk", sans-serif' }}
               >
                 {["I", "II", "III", "IV"][idx]}
               </span>
 
               <div className="relative flex items-start gap-5">
-                <div className="relative flex-shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center text-[#f2b25c] bg-gradient-to-b from-white/[0.08] to-white/[0.02] border border-[#f2b25c]/20 group-hover:border-[#f2b25c]/40 transition-colors duration-500">
+                <div className="relative flex-shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center text-[#00529b] bg-white border border-slate-200 shadow-sm group-hover:border-[#f05123]/40 group-hover:text-[#f05123] transition-colors duration-500">
                   <Icon name={item.icon} className="w-6 h-6" />
                 </div>
 
                 <div className="flex-1 min-w-0">
-                  <span className="block text-xs font-semibold text-[#f2b25c]/90 mb-2 tracking-wide">
+                  <span className="block text-xs font-bold text-[#f05123] mb-2 tracking-wide uppercase">
                     {item.tag}
                   </span>
                   <h3
-                    className="text-xl sm:text-2xl font-semibold text-white mb-3 leading-snug"
+                    className="text-xl sm:text-2xl font-semibold text-slate-900 mb-3 leading-snug"
                     style={{ fontFamily: '"Space Grotesk", sans-serif' }}
                   >
                     {item.title}
                   </h3>
-                  <p className="text-sm text-slate-400 leading-relaxed">
+                  <p className="text-sm text-slate-600 leading-relaxed">
                     {item.description}
                   </p>
                 </div>
               </div>
 
-              <span className="relative block w-8 group-hover:w-14 h-px bg-gradient-to-r from-[#f05123] to-[#f2b25c] mt-7 transition-all duration-500" />
+              <span className="relative block w-8 group-hover:w-14 h-px bg-gradient-to-r from-[#f05123] to-[#00529b] mt-7 transition-all duration-500" />
             </div>
           ))}
         </div>
 
         {/* Fine-print signature line */}
         <div
-          className="mt-14 md:mt-16 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-xs text-slate-500 text-center"
+          className="mt-14 md:mt-16 pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-xs text-slate-500 text-center"
           style={{ fontFamily: '"Inter", sans-serif' }}
         >
           <span>AASSC accredited</span>
-          <span className="hidden sm:inline text-slate-700">•</span>
+          <span className="hidden sm:inline text-slate-300">•</span>
           <span>Curriculum aligned to national skill standards</span>
-          <span className="hidden sm:inline text-slate-700">•</span>
+          <span className="hidden sm:inline text-slate-300">•</span>
           <span>Trusted by 40+ airline & airport partners</span>
         </div>
       </div>
