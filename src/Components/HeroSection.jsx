@@ -1,120 +1,76 @@
-import React, { useState, useEffect, useCallback } from "react";
+import Navbar from "../Router/Navbar";
 
-export const courses = [
-  {
-    id: "01",
-    slug: "cabin-crew",
-    title: "Cabin Crew Training",
-    heroHeading: "CABIN CREW",
-    headline:
-      "LAUNCH YOUR AVIATION CAREER WITH CABIN CREW TRAINING.",
-    desktopImage: "/img1.png",
-    mobileImage: "/img1-mobile.png",
-    overview:
-      "Gain practical inflight service, safety protocols, and passenger handling skills at Aviate Academy. Prepare for international airline interviews with industry-focused training.",
-  },
-  {
-    id: "02",
-    slug: "airport-ground-operations",
-    title: "Airport Ground Operations",
-    heroHeading: "AIRPORT GROUND OPERATIONS",
-    headline: "MASTER AIRPORT GROUND OPERATIONS & TERMINAL SERVICES.",
-    desktopImage: "/img2.png",
-    mobileImage: "/img2-mobile.png",
-    overview:
-      "Learn essential ground handling, passenger servicing, and airport safety procedures. Build a strong operational foundation with our expert-led aviation academy programs.",
-  },
-];
-
-const HeroSection = ({ courseData = courses }) => {
-  const [activeCourseId, setActiveCourseId] = useState(
-    courseData[0]?.id || "01",
-  );
-
-  // Auto-rotate dynamic course slide every 5.5s
-  const nextCourse = useCallback(() => {
-    setActiveCourseId((prevId) => {
-      const idx = courseData.findIndex((c) => c.id === prevId);
-      return courseData[(idx + 1) % courseData.length].id;
-    });
-  }, [courseData]);
-
-  useEffect(() => {
-    const timer = setInterval(nextCourse, 5500);
-    return () => clearInterval(timer);
-  }, [nextCourse]);
-
+export default function HeroSection({
+  desktopImage = "/img1.png",
+  mobileImage = "/img-mob.png",
+  tag = "MYSORE'S #1 AVIATION ACADEMY",
+  headline = "Phoenix Academy, Mysore's 1st Aviation Institute",
+  sub = "Pioneering cabin crew and hospitality training in Mysore with 100% placement support.",
+  ctaText = "Begin Your Journey",
+  ctaLink = "#",
+}) {
   return (
-    <section className="w-full mx-auto px-3 sm:px-6 lg:px-8 mt-4 sm:mt-6">
-      {/* Main Hero Card Container */}
-      <div className="relative w-full rounded-[24px] sm:rounded-[28px] overflow-hidden bg-slate-950 min-h-[520px] sm:min-h-[580px] flex flex-col justify-end shadow-2xl">
-        {/* Dynamic Image Cross-Fade Stack */}
-        {courseData.map((course) => {
-          const isActive = course.id === activeCourseId;
-          return (
-            <div
-              key={course.id}
-              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                isActive ? "opacity-100" : "opacity-0 pointer-events-none"
-              }`}
-            >
-              {/* Mobile Image */}
-              <img
-                src={course.mobileImage || course.desktopImage}
-                alt={course.title}
-                className="block sm:hidden w-full h-full object-cover object-center"
-              />
-              {/* Desktop Image */}
-              <img
-                src={course.desktopImage}
-                alt={course.title}
-                className="hidden sm:block w-full h-full object-cover object-center"
-              />
-
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-slate-950/20 sm:bg-gradient-to-r sm:from-slate-950/95 sm:via-slate-950/70 sm:to-transparent lg:w-[65%]" />
-            </div>
-          );
-        })}
-
-        {/* Hero Content Overlay */}
-        <div className="relative z-10 w-full flex flex-col justify-end p-6 sm:p-10 lg:p-14">
-          <div className="max-w-xl text-white pt-6">
-            <div className="relative min-h-[140px] sm:min-h-[150px]">
-              {courseData.map((course) => {
-                const isActive = course.id === activeCourseId;
-                return (
-                  <div
-                    key={course.id}
-                    className={`transition-all duration-700 ease-out ${
-                      isActive
-                        ? "opacity-100 translate-y-0 relative"
-                        : "opacity-0 translate-y-4 absolute inset-0 pointer-events-none"
-                    }`}
-                  >
-                    <h1 className="text-2xl sm:text-4xl lg:text-[44px] font-extrabold leading-[1.2] tracking-tight text-white capitalize mb-3">
-                      {course.headline
-                        .toLowerCase()
-                        .replace(/\b\w/g, (c) => c.toUpperCase())}
-                    </h1>
-                    <p className="text-xs sm:text-sm leading-relaxed text-gray-200/90 font-normal line-clamp-3">
-                      {course.overview}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 mt-6 sm:mt-8">
-              <button className="w-full sm:w-auto text-center bg-[#1D61E7] hover:bg-blue-700 text-white font-semibold px-6 py-3.5 sm:py-3 rounded-xl text-xs sm:text-sm transition-all duration-200 shadow-lg shadow-blue-600/30 active:scale-[0.98]">
-                Start Your Journey
-              </button>
-            </div>
-          </div>
+    <div className="w-full px-2 sm:px-4  py-2">
+      <section className="relative w-full min-h-[680px] md:min-h-[705px] rounded-[32px] md:rounded-[44px] overflow-hidden shadow-sm flex items-end justify-center text-center p-6 pb-12 md:p-12 md:pb-16">
+        {/* Floating Top Navbar Container */}
+        <div className="absolute -top-2 md:-top-5 left-0 w-full z-30 p-2 sm:p-4 md:p-6">
+          <Navbar />
         </div>
-      </div>
-    </section>
-  );
-};
 
-export default HeroSection;
+        {/* Desktop Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center hidden md:block"
+          style={{ backgroundImage: `url('${desktopImage}')` }}
+        />
+
+        {/* Mobile Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center block md:hidden"
+          style={{ backgroundImage: `url('${mobileImage || desktopImage}')` }}
+        />
+
+        {/* Overlay */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.85) 100%)",
+          }}
+        />
+
+        {/* Content Stack */}
+        <div className="relative z-10 flex flex-col items-center max-w-4xl mx-auto text-white">
+          {tag && (
+            <p className="m-0 mb-3 text-xs md:text-sm font-semibold uppercase tracking-[0.25em] text-white/90 drop-shadow-sm">
+              {tag}
+            </p>
+          )}
+
+          <h1
+            className="m-0 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal leading-tight text-white drop-shadow-md"
+            style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
+          >
+            {headline}
+          </h1>
+
+          {sub && (
+            <p className="mt-4 mb-0 text-xs sm:text-sm md:text-base font-light text-white/90 max-w-lg leading-relaxed drop-shadow-sm">
+              {sub}
+            </p>
+          )}
+
+          <a
+            href={ctaLink}
+            className="mt-6 inline-flex items-center justify-center text-xs sm:text-sm font-medium px-8 py-3.5 rounded-full text-gray-900 bg-white hover:bg-gray-100 transition-all duration-200 shadow-md hover:shadow-lg no-underline"
+          >
+            {ctaText}
+          </a>
+        </div>
+
+        <style>{`
+          @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+        `}</style>
+      </section>
+    </div>
+  );
+}

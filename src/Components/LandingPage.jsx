@@ -1,15 +1,13 @@
-import Navbar from '../Router/Navbar'
-import HeroSection from './HeroSection'
-import TrainingPrograms from './TrainingPrograms'
-
+import HeroSection from "./HeroSection"
+import KeyHighlights from "./KeyHighlights"
+import RecruitmentSection from "./RecruitmentSection"
 
 const LandingPage = () => {
   return (
     <div>
-      <Navbar/>
       <HeroSection/>
-      <TrainingPrograms/>
-
+      <KeyHighlights/>
+      <RecruitmentSection/>
     </div>
   )
 }
