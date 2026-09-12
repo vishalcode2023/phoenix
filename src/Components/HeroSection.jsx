@@ -13,7 +13,7 @@ export default function HeroSection({
     <div className="w-full px-2 sm:px-4  py-2">
       <section className="relative w-full min-h-[680px] md:min-h-[705px] rounded-[32px] md:rounded-[44px] overflow-hidden shadow-sm flex items-end justify-center text-center p-6 pb-12 md:p-12 md:pb-16">
         {/* Floating Top Navbar Container */}
-        <div className="absolute -top-2 md:-top-5 left-0 w-full z-30 p-2 sm:p-4 md:p-6">
+        <div className="absolute -top-1 md:-top-5 left-0 w-full z-30 p-2 sm:p-4 md:p-6">
           <Navbar />
         </div>
 
