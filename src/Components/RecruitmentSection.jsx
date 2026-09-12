@@ -1,148 +1,295 @@
+import React from "react";
+
 const recruiters = [
-  { name: "Air India SATS", logo: "/logos/airindia-sats.png" },
-  { name: "IndiGo", logo: "/logos/indigo.png" },
-  { name: "Emirates", logo: "/logos/emirates.png" },
-  { name: "Plaza Premium", logo: "/logos/plaza-premium.png" },
-  { name: "Air India", logo: "/logos/airindia.png" },
-  { name: "Vistara", logo: "/logos/vistara.png" },
+  {
+    name: "Air India SATS",
+    logo: "https://img-cdn.publive.online/fit-in/1280x960/filters:format(webp)/afaqs/media/media_files/2025/11/07/air-india-2025-11-07-14-58-30.jpg",
+    stripe: "bg-[#00529b]",
+  },
+  { name: "IndiGo", logo: "https://imgs.search.brave.com/w2ioJm96rR58U-gFtd2OzznidtolvmdoL1tA_o28eZ4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly8xMDAw/bG9nb3MubmV0L3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDIxLzA3/L0luZGlHby1Mb2dv/LTUwMHgzMTQuanBn", stripe: "bg-[#f05123]" },
+  {
+    name: "Emirates",
+    logo: "https://imgs.search.brave.com/AAzn8wKD6F56gqhnI3KcMeHWprZS5hyEbtB5_JMQSN8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly8xMDAw/bG9nb3MubmV0L3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDIwLzAz/L0VtaXJhdGVzLWxv/Z28tNTAweDI4MS5q/cGc",
+    stripe: "bg-slate-700",
+  },
+  {
+    name: "Plaza Premium Group",
+    logo: "https://imgs.search.brave.com/NiSN1Nvdp-rdwYbb4vykUagVBRqWzgxcBZ2ARDvfnfM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9haXJw/b3J0aW5kdXN0cnkt/bmV3cy5jb20vd3At/Y29udGVudC91cGxv/YWRzL3NpdGVzLzIv/MjAyMy8wNC9QbGF6/YVByZW1pdW0tTG9n/by5wbmc",
+    stripe: "bg-[#00529b]",
+  },
+  { name: "Air India", logo: "https://imgs.search.brave.com/JMBhGbwzoShFLjlJNNFYh78phsmNTUMkrz3IW7SuOhw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzVkL2E1/L2Y5LzVkYTVmOTQ5/YzYxMjEyOTIyNjJm/ZTljNmJjNTFkNjQ1/LmpwZw", stripe: "bg-[#f05123]" },
+  { name: "Vistara", logo: "https://imgs.search.brave.com/9tsDNDoUL8zWkJ3_xskZWgMjmKrXzb2qP6YaKaJnRjw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aGVo/YXJkY29weS5jby93/cC1jb250ZW50L3Vw/bG9hZHMvVmlzdGFy/YS1JbWFnZXMtNy0x/MjAweDgwNS5wbmc", stripe: "bg-slate-700" },
 ];
 
-const highlights = [
+const features = [
   {
-    number: "01",
-    tag: "10+ Years Experience",
-    title: "Industry-Experienced Faculty",
+    step: "01",
+    tag: "Flight faculty",
+    title: "Industry-experienced trainers",
     description:
-      "Trained directly by active airline captains, cabin crew leads, and airport managers with real tarmac expertise.",
-    tagStyle: "bg-blue-50 text-[#00529b] border-blue-100",
-    iconBg: "bg-blue-50 text-[#00529b]",
-    hoverBorder: "hover:border-[#00529b]/30",
-    icon: (
-      <svg
-        className="w-6 h-6"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          d="M12 14l9-5-9-5-9 5 9 5z"
-        />
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 01-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-        />
-      </svg>
-    ),
+      "Trained directly by active airline commanders, senior cabin crew leads, and ground operation managers with decade-plus field experience.",
+    points: ["Real tarmac insights", "Mock aircraft drills", "AASSC standards"],
+    stat: {
+      value: "12+",
+      label: "Years average flight-deck & cabin experience",
+    },
+    accentColor: "from-[#00529b] to-sky-600",
+    lightBg: "bg-blue-50/80",
+    textColor: "text-[#00529b]",
+    borderColor: "hover:border-[#00529b]/40",
   },
   {
-    number: "02",
-    tag: "100% Career Assistance",
-    title: "Placement Support",
+    step: "02",
+    tag: "Placement cell",
+    title: "Dedicated job assistance",
     description:
-      "Dedicated first job assistance, personalized resume building, and intensive airline mock interview preparation.",
-    tagStyle: "bg-orange-50 text-[#f05123] border-orange-100",
-    iconBg: "bg-orange-50 text-[#f05123]",
-    hoverBorder: "hover:border-[#f05123]/30",
-    icon: (
-      <svg
-        className="w-6 h-6"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-        />
-      </svg>
-    ),
+      "End-to-end career support including personalized airline CV building, grooming transformations, and guaranteed interview walk-ins.",
+    points: [
+      "100% placement support",
+      "Airline interview coaching",
+      "Salary negotiation",
+    ],
+    stat: { value: "3 wks", label: "Average time to first airline interview" },
+    accentColor: "from-[#f05123] to-amber-500",
+    lightBg: "bg-orange-50/80",
+    textColor: "text-[#f05123]",
+    borderColor: "hover:border-[#f05123]/40",
   },
 ];
+
+const stats = [
+  { value: "500+", label: "Graduates placed" },
+  { value: "40+", label: "Airline & airport partners" },
+  { value: "92%", label: "Placement rate" },
+  { value: "15 yrs", label: "Training legacy" },
+];
+
+function PlaneIcon({ className }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className}>
+      <path
+        d="M10.5 20.5L12 17l-5-1.2v-1.6L18 9.5V6.8c0-.9-.7-1.6-1.6-1.6-.4 0-.7.1-1 .4L9 10.1 4.4 8.9l-1.4 1 3.6 2.9-1.1 2 2.2-.3 1.1 2.1 1.7-1.1 1 3.9 2-1.9"
+        stroke="currentColor"
+        strokeWidth="1.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function LogoChip({ item }) {
+  return (
+    <div className="flex-shrink-0 w-60 md:w-72 flex items-center gap-4 md:gap-5 bg-white rounded-2xl pl-5 pr-6 py-5 md:py-6 border border-slate-200/80 shadow-[0_6px_20px_rgba(0,0,0,0.04)] mx-3 md:mx-4">
+      <span
+        className={`w-2 h-12 md:h-14 rounded-full flex-shrink-0 items-center ${item.stripe}`}
+      />
+      <img
+        src={item.logo}
+        alt={item.name}
+        className="h-12 md:h-20  max-w-[180px]  object-contain"
+        onError={(e) => {
+          e.currentTarget.style.display = "none";
+          e.currentTarget.nextSibling.style.display = "inline-block";
+        }}
+      />
+      <span
+        className="hidden text-slate-700 font-semibold text-lg md:text-xl whitespace-nowrap"
+        style={{ fontFamily: '"Space Grotesk", sans-serif' }}
+      >
+        {item.name}
+      </span>
+    </div>
+  );
+}
 
 export default function RecruitmentSection() {
+  const loopedRecruiters = [...recruiters, ...recruiters];
+
   return (
-    <section className="relative w-full py-16 md:py-24 px-4 sm:px-6 md:px-12 bg-gradient-to-b from-gray-50 via-sky-50/20 to-white overflow-hidden">
-      {/* Background Soft Glow Accents */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-gradient-to-r from-blue-100/40 via-orange-100/30 to-sky-100/40 blur-3xl rounded-full pointer-events-none" />
+    <section className="relative w-full pt-20 md:pt-28 bg-[#f6f8fa] overflow-hidden">
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+        @keyframes marquee-scroll {
+          from { transform: translateX(0); }
+          to { transform: translateX(-50%); }
+        }
+        .marquee-track { animation: marquee-scroll 32s linear infinite; }
+        .marquee-track:hover { animation-play-state: paused; }
+      `}</style>
 
-      <div className="relative max-w-6xl mx-auto z-10">
-        {/* Title & Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10 md:mb-14">
-          <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold tracking-widest text-[#f05123] bg-orange-50 border border-orange-100 uppercase mb-3">
-            Hiring Partners
-          </span>
+      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-gradient-to-r from-blue-200/20 via-orange-200/20 to-sky-200/20 blur-3xl rounded-full pointer-events-none" />
+
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 md:px-12 z-10">
+        {/* Header */}
+        <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
+          <div className="inline-flex items-center gap-2 mb-5 text-[#f05123]">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#f05123] animate-pulse" />
+            <span
+              className="text-sm font-medium"
+              style={{ fontFamily: '"Inter", sans-serif' }}
+            >
+              Career launchpad
+            </span>
+          </div>
           <h2
-            className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight"
-            style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
+            className="text-4xl sm:text-5xl md:text-6xl font-semibold text-slate-900 tracking-tight leading-[1.05] mb-4"
+            style={{ fontFamily: '"Space Grotesk", sans-serif' }}
           >
-            Our Top Recruiters
+            Where our students get hired
           </h2>
+          <p
+            className="text-slate-500 text-base leading-relaxed"
+            style={{ fontFamily: '"Inter", sans-serif' }}
+          >
+            Leading international airlines and airport operators actively
+            recruit from our graduating batches.
+          </p>
         </div>
+      </div>
 
-        {/* Clean Logo Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-5 mb-12 md:mb-16">
-          {recruiters.map((item, idx) => (
+      {/* Full-bleed recruiter marquee */}
+      <div className="relative mb-16 md:mb-24">
+        <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-[#f6f8fa] to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-[#f6f8fa] to-transparent z-10 pointer-events-none" />
+        <div className="flex w-max marquee-track py-4">
+          {loopedRecruiters.map((item, idx) => (
+            <LogoChip item={item} key={idx} />
+          ))}
+        </div>
+      </div>
+
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 md:px-12 z-10">
+        {/* Feature cards */}
+        <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto">
+          <div className="hidden md:flex absolute top-14 left-1/2 -translate-x-1/2 items-center gap-2 text-slate-300 z-10">
+            <span className="w-14 border-t-2 border-dashed border-slate-300" />
+            <PlaneIcon className="w-5 h-5 text-slate-400" />
+            <span className="w-14 border-t-2 border-dashed border-slate-300" />
+          </div>
+
+          {features.map((item, idx) => (
             <div
               key={idx}
-              className="h-20 bg-white rounded-2xl p-4 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex items-center justify-center group"
+              className={`group relative bg-white rounded-[32px] p-7 md:p-9 border border-slate-200/80 shadow-[0_10px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-500 flex flex-col overflow-hidden ${item.borderColor}`}
+              style={{ fontFamily: '"Inter", sans-serif' }}
             >
-              <img
-                src={item.logo}
-                alt={item.name}
-                className="max-h-full max-w-full object-contain filter group-hover:scale-105 transition-all duration-300"
+              <div
+                className={`absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r ${item.accentColor}`}
               />
+
+              <div className="flex items-center justify-between mb-5">
+                <span
+                  className={`text-xs font-semibold px-3.5 py-1.5 rounded-full ${item.lightBg} ${item.textColor}`}
+                >
+                  {item.tag}
+                </span>
+                <span
+                  className="text-3xl font-semibold text-slate-200 group-hover:text-slate-300 transition-colors"
+                  style={{ fontFamily: '"Space Grotesk", sans-serif' }}
+                >
+                  {item.step}
+                </span>
+              </div>
+
+              <h3
+                className="text-2xl sm:text-[1.7rem] font-semibold text-slate-900 mb-3 group-hover:text-[#00529b] transition-colors leading-tight"
+                style={{ fontFamily: '"Space Grotesk", sans-serif' }}
+              >
+                {item.title}
+              </h3>
+              <p className="text-slate-500 text-sm leading-relaxed mb-6">
+                {item.description}
+              </p>
+
+              <div className="space-y-3 pb-6 mb-6 border-b border-dashed border-slate-200">
+                {item.points.map((pt, pIdx) => (
+                  <div
+                    key={pIdx}
+                    className="flex items-center gap-3 text-sm font-medium text-slate-700"
+                  >
+                    <div
+                      className={`w-5 h-5 rounded-full ${item.lightBg} flex items-center justify-center flex-shrink-0`}
+                    >
+                      <svg
+                        className={`w-3 h-3 ${item.textColor}`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="3"
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                    </div>
+                    <span>{pt}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div
+                className={`flex items-center gap-4 rounded-2xl ${item.lightBg} px-5 py-4 mb-6`}
+              >
+                <span
+                  className={`text-3xl font-semibold ${item.textColor} whitespace-nowrap`}
+                  style={{ fontFamily: '"Space Grotesk", sans-serif' }}
+                >
+                  {item.stat.value}
+                </span>
+                <span className="text-xs font-medium text-slate-600 leading-snug">
+                  {item.stat.label}
+                </span>
+              </div>
+
+              <div className="mt-auto flex items-center justify-between text-sm font-semibold text-slate-900">
+                <span>Discover opportunity</span>
+                <div
+                  className={`w-10 h-10 rounded-full ${item.lightBg} flex items-center justify-center group-hover:translate-x-1.5 transition-transform duration-300`}
+                >
+                  <svg
+                    className={`w-4 h-4 ${item.textColor}`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2.5"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    />
+                  </svg>
+                </div>
+              </div>
             </div>
           ))}
         </div>
+      </div>
 
-        {/* Divider Line */}
-        <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent mb-12 md:mb-16" />
-
-        {/* Feature Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          {highlights.map((card, idx) => (
+      {/* Stats band */}
+      <div className="relative mt-16 md:mt-24 bg-[#062a4a]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-12 py-10 md:py-12 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6">
+          {stats.map((s, idx) => (
             <div
               key={idx}
-              className={`relative bg-white rounded-[28px] p-7 md:p-8 border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col justify-between group ${card.hoverBorder}`}
+              className={`text-center md:text-left ${
+                idx > 0 ? "md:border-l md:border-white/10 md:pl-6" : ""
+              }`}
             >
-              {/* Top Row: Icon & Tag */}
-              <div>
-                <div className="flex items-center justify-between mb-5">
-                  <div
-                    className={`w-12 h-12 rounded-2xl ${card.iconBg} flex items-center justify-center transition-transform duration-300 group-hover:scale-110`}
-                  >
-                    {card.icon}
-                  </div>
-                  <span
-                    className={`text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border ${card.tagStyle}`}
-                  >
-                    {card.tag}
-                  </span>
-                </div>
-
-                {/* Title & Description */}
-                <h3 className="text-gray-900 font-bold text-xl md:text-2xl mb-2 group-hover:text-[#00529b] transition-colors">
-                  {card.title}
-                </h3>
-
-                <p className="text-gray-500 text-xs sm:text-sm leading-relaxed mb-6">
-                  {card.description}
-                </p>
+              <div
+                className="text-3xl md:text-4xl font-semibold text-white tracking-tight"
+                style={{ fontFamily: '"Space Grotesk", sans-serif' }}
+              >
+                {s.value}
               </div>
-
-              {/* Bottom Subtle Indicator */}
-              <div className="pt-4 border-t border-gray-50 flex items-center justify-between text-xs font-semibold text-gray-400 group-hover:text-gray-700 transition-colors">
-                <span>Learn More</span>
-                <span className="text-[#00529b] group-hover:translate-x-1 transition-transform">
-                  →
-                </span>
+              <div
+                className="mt-1 text-xs md:text-sm text-slate-300"
+                style={{ fontFamily: '"Inter", sans-serif' }}
+              >
+                {s.label}
               </div>
             </div>
           ))}
