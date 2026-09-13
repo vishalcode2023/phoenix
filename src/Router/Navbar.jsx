@@ -99,7 +99,7 @@ export default function Navbar() {
         {/* Right Action Area (Desktop) */}
         <div className="hidden md:flex items-center gap-3">
           <Link
-            to="/apply"
+            to="/contact"
             className="no-underline bg-[#00529b] hover:bg-[#003e75] text-white text-sm font-semibold px-6 py-2.5 rounded-full inline-flex items-center gap-2 transition-all duration-200 shadow-sm"
           >
             <span>Apply</span>
