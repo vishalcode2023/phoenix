@@ -1,8 +1,9 @@
 import Navbar from "../Router/Navbar";
 
 export default function HeroSection({
-  desktopImage = "/img1.png",
-  mobileImage = "/img-mob.png",
+  desktopVideo = "/herovideo.mp4",
+  mobileVideo = "/herovideo.mp4",
+  posterImage = "/img1.png",
   tag = "MYSORE'S #1 AVIATION ACADEMY",
   headline = "Phoenix Academy, Mysore's 1st Aviation Institute",
   sub = "Pioneering cabin crew and hospitality training in Mysore with 100% placement support.",
@@ -17,16 +18,26 @@ export default function HeroSection({
           <Navbar />
         </div>
 
-        {/* Desktop Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center hidden md:block"
-          style={{ backgroundImage: `url('${desktopImage}')` }}
+        {/* Desktop Video */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover hidden md:block"
+          src={desktopVideo}
+          poster={posterImage}
+          autoPlay
+          loop
+          muted
+          playsInline
         />
 
-        {/* Mobile Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center block md:hidden"
-          style={{ backgroundImage: `url('${mobileImage || desktopImage}')` }}
+        {/* Mobile Video */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover block md:hidden"
+          src={mobileVideo || desktopVideo}
+          poster={posterImage}
+          autoPlay
+          loop
+          muted
+          playsInline
         />
 
         {/* Overlay */}
@@ -66,10 +77,6 @@ export default function HeroSection({
             {ctaText}
           </a>
         </div>
-
-        <style>{`
-          @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
-        `}</style>
       </section>
     </div>
   );

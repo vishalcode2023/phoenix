@@ -31,10 +31,8 @@ const airlinePartners = [
 
 export default function AboutPageContent() {
   return (
-    <div className="w-full bg-slate-50 text-slate-800 font-sans min-h-screen">
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
-      `}</style>
+    <div className="w-full bg-slate-50 text-slate-800 min-h-screen">
+     
 
       {/* ==========================================
           1. HERO SECTION WITH EMBEDDED NAVBAR
@@ -98,7 +96,7 @@ export default function AboutPageContent() {
           <div className="text-center pt-2 sm:pt-0">
             <div
               className="text-3xl sm:text-4xl font-bold text-[#00529b]"
-              style={{ fontFamily: '"Playfair Display", serif' }}
+              
             >
               1st
             </div>
@@ -110,7 +108,7 @@ export default function AboutPageContent() {
           <div className="text-center pt-2 sm:pt-0 sm:px-2">
             <div
               className="text-3xl sm:text-4xl font-bold text-[#00529b]"
-              style={{ fontFamily: '"Playfair Display", serif' }}
+              
             >
               100%
             </div>
@@ -122,7 +120,7 @@ export default function AboutPageContent() {
           <div className="text-center pt-2 sm:pt-0 sm:px-2">
             <div
               className="text-3xl sm:text-4xl font-bold text-[#00529b]"
-              style={{ fontFamily: '"Playfair Display", serif' }}
+              
             >
               2,500+
             </div>
@@ -134,7 +132,7 @@ export default function AboutPageContent() {
           <div className="text-center pt-2 sm:pt-0 sm:px-2">
             <div
               className="text-3xl sm:text-4xl font-bold text-[#00529b]"
-              style={{ fontFamily: '"Playfair Display", serif' }}
+              
             >
               35+
             </div>
@@ -161,7 +159,7 @@ export default function AboutPageContent() {
 
             <h2
               className="text-3xl sm:text-4xl font-bold text-slate-900 leading-tight"
-              style={{ fontFamily: '"Playfair Display", serif' }}
+              
             >
               Empowering Mysore’s Youth for Global Aviation & Hospitality
               Careers
@@ -224,7 +222,7 @@ export default function AboutPageContent() {
                 </span>
                 <h3
                   className="text-xl font-bold mt-1"
-                  style={{ fontFamily: '"Playfair Display", serif' }}
+                  
                 >
                   Practical Cabin & Safety Training
                 </h3>
@@ -244,7 +242,7 @@ export default function AboutPageContent() {
           </p>
           <h2
             className="text-3xl sm:text-4xl font-bold text-slate-900"
-            style={{ fontFamily: '"Playfair Display", serif' }}
+            
           >
             Why Mysore Chooses Phoenix
           </h2>
@@ -261,7 +259,7 @@ export default function AboutPageContent() {
             </div>
             <h3
               className="text-xl font-bold text-slate-900 mb-2"
-              style={{ fontFamily: '"Playfair Display", serif' }}
+              
             >
               Airline Experienced Faculty
             </h3>
@@ -277,7 +275,6 @@ export default function AboutPageContent() {
             </div>
             <h3
               className="text-xl font-bold text-slate-900 mb-2"
-              style={{ fontFamily: '"Playfair Display", serif' }}
             >
               100% Placement Cell
             </h3>
@@ -293,7 +290,6 @@ export default function AboutPageContent() {
             </div>
             <h3
               className="text-xl font-bold text-slate-900 mb-2"
-              style={{ fontFamily: '"Playfair Display", serif' }}
             >
               Modern Infrastructure
             </h3>
@@ -319,7 +315,6 @@ export default function AboutPageContent() {
 
             <h2
               className="text-2xl sm:text-4xl md:text-5xl font-normal text-white mb-10 tracking-tight"
-              style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
             >
               Our Graduates Work With Leading Global Carriers
             </h2>

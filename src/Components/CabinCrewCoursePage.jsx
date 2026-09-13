@@ -176,7 +176,7 @@ export default function CabinCrewCoursePage() {
               </span>
               <h2
                 className="text-3xl sm:text-4xl font-bold text-slate-900 leading-tight"
-                style={{ fontFamily: '"Playfair Display", serif' }}
+                
               >
                 Your Journey to a High-Flying Aviation Career
               </h2>
@@ -259,7 +259,7 @@ export default function CabinCrewCoursePage() {
             </span>
             <h3
               className="text-2xl sm:text-4xl font-bold leading-tight"
-              style={{ fontFamily: '"Playfair Display", serif' }}
+              
             >
               Airline Interview Preparation & Career Guidance
             </h3>
@@ -299,7 +299,7 @@ export default function CabinCrewCoursePage() {
           </span>
           <h2
             className="text-3xl sm:text-4xl font-bold text-slate-900"
-            style={{ fontFamily: '"Playfair Display", serif' }}
+            
           >
             Four Modules, One Job-Ready Skillset
           </h2>
@@ -352,7 +352,7 @@ export default function CabinCrewCoursePage() {
           </span>
           <h2
             className="text-3xl sm:text-4xl font-bold text-slate-900"
-            style={{ fontFamily: '"Playfair Display", serif' }}
+            
           >
             Eligibility Criteria
           </h2>
@@ -405,7 +405,7 @@ export default function CabinCrewCoursePage() {
 
             <h2
               className="text-3xl sm:text-5xl font-bold text-white tracking-tight"
-              style={{ fontFamily: '"Playfair Display", serif' }}
+              
             >
               READY TO TAKE OFF?
             </h2>

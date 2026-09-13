@@ -291,7 +291,7 @@ export default function AirportGroundOperationsPage() {
               </span>
               <h2
                 className="text-3xl sm:text-4xl font-bold text-slate-900 leading-tight"
-                style={{ fontFamily: '"Playfair Display", serif' }}
+                
               >
                 Your Gateway to a Career in Airport Ground Operations
               </h2>
@@ -361,7 +361,7 @@ export default function AirportGroundOperationsPage() {
             </span>
             <h3
               className="text-2xl sm:text-4xl font-bold leading-tight"
-              style={{ fontFamily: '"Playfair Display", serif' }}
+              
             >
               Training That Takes You From the Classroom to the Airport
             </h3>
@@ -402,7 +402,7 @@ export default function AirportGroundOperationsPage() {
           </span>
           <h2
             className="text-3xl sm:text-4xl font-bold text-slate-900"
-            style={{ fontFamily: '"Playfair Display", serif' }}
+            
           >
             Four Modules, One Job-Ready Skillset
           </h2>
@@ -456,7 +456,7 @@ export default function AirportGroundOperationsPage() {
           </span>
           <h2
             className="text-3xl sm:text-4xl font-bold text-slate-900"
-            style={{ fontFamily: '"Playfair Display", serif' }}
+            
           >
             Course Highlights
           </h2>
@@ -494,7 +494,7 @@ export default function AirportGroundOperationsPage() {
           </span>
           <h2
             className="text-3xl sm:text-4xl font-bold text-slate-900"
-            style={{ fontFamily: '"Playfair Display", serif' }}
+            
           >
             Ground Operations Curriculum
           </h2>
@@ -548,7 +548,7 @@ export default function AirportGroundOperationsPage() {
           </span>
           <h2
             className="text-3xl sm:text-4xl font-bold text-slate-900"
-            style={{ fontFamily: '"Playfair Display", serif' }}
+            
           >
             Eligibility Criteria
           </h2>
@@ -601,7 +601,7 @@ export default function AirportGroundOperationsPage() {
 
             <h2
               className="text-3xl sm:text-5xl font-bold text-white tracking-tight leading-tight"
-              style={{ fontFamily: '"Playfair Display", serif' }}
+              
             >
               Build Skills. Gain Confidence. Start Your Aviation Career.
             </h2>

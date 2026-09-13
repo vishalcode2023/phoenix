@@ -85,7 +85,7 @@ export default function ContactPage() {
               </span>
               <h2
                 className="text-2xl sm:text-3xl font-bold text-slate-900 leading-tight"
-                style={{ fontFamily: '"Playfair Display", serif' }}
+               
               >
                 Visit Our Mysore Campus or Call Us
               </h2>
@@ -162,7 +162,7 @@ export default function ContactPage() {
             <div className="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200/80 shadow-xl">
               <h3
                 className="text-2xl font-bold text-slate-900 mb-2"
-                style={{ fontFamily: '"Playfair Display", serif' }}
+               
               >
                 Send Us a Message
               </h3>

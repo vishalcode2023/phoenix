@@ -1,17 +1,7 @@
 import React from "react";
 
-const mainNavLinks = ["About Us", "Courses", "Placement Support"];
-
-const courseLinks = [
-  "Aviation, Hospitality & Travel Management",
-  "Hospitality, Travel & Customer Service",
-  "Hospitality Management",
-  "Aviation & Hospitality Services",
-  "Airport Ground Services",
-];
-
-// Lightweight SVG Social Icons
-const SocialIcon = ({ type }) => {
+// Lightweight SVG Icons
+const Icon = ({ type, className = "w-4 h-4" }) => {
   const icons = {
     linkedin: (
       <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z" />
@@ -29,11 +19,28 @@ const SocialIcon = ({ type }) => {
     twitter: (
       <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
     ),
+    pin: (
+      <>
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+        <circle cx="12" cy="10" r="3" />
+      </>
+    ),
+    phone: (
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+    ),
+    mail: (
+      <>
+        <rect x="2" y="4" width="20" height="16" rx="2" />
+        <path d="m22 6-10 7L2 6" />
+      </>
+    ),
   };
 
   return (
     <svg
-      className="w-4 h-4 fill-none stroke-currentColor stroke-2 stroke-linecap-round stroke-linejoin-round"
+      className={`${className} fill-none stroke-current stroke-2`}
+      strokeLinecap="round"
+      strokeLinejoin="round"
       viewBox="0 0 24 24"
     >
       {icons[type]}
@@ -41,225 +48,166 @@ const SocialIcon = ({ type }) => {
   );
 };
 
-export default function Footer() {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
+export default function Footer({
+  bgImage = "/img1.png",
+headlinePrefix = "Build Your Future",
+headlineAccent = "in Aviation",
+headlineSuffix = "",
+  sub = "We are proud to offer top quality training courses that teach life skills and corporate skills, along with training and 1st job placement assistance in aviation & hospitality.",
+  ctaText = "Enquire Now",
+  ctaLink = "/contact",
+  logo = "/logo.png",
+  branches = [
+    {
+      label: "MYSORE (HQ)",
+      address: "Address line 1, 5th Block, Mysore, Karnataka 570001",
+    },
+    {
+      label: "BENGALURU BRANCH",
+      address: "Address line 1, 11th Main Rd, Bengaluru, Karnataka 560041",
+    },
+  ],
+  phones = ["+91 97314 32324", "+91 93806 79590"],
+  emails = ["info@phoenixacademy.com", "admissions@phoenixacademy.com"],
+  socials = ["facebook", "instagram", "twitter", "linkedin"],
+}) {
   return (
-    <footer className="relative w-full bg-white text-slate-700 font-sans border-t border-slate-200/80 overflow-hidden">
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
-      `}</style>
+    <div className="w-full px-2 sm:px-4 py-2">
+      <footer
+        className="relative w-full min-h-[600px] rounded-[32px] md:rounded-[44px] overflow-hidden shadow-sm bg-slate-900"
+        style={{ fontFamily: "Inter, sans-serif" }}
+      >
+        <style>{`
+          @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap');
+        `}</style>
 
-      {/* Light soft ambient background glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[300px] bg-gradient-to-r from-sky-100/70 via-blue-100/40 to-orange-100/50 blur-[120px] pointer-events-none rounded-full" />
+        {/* Background image (plain <img> so load errors are visible / debuggable) */}
+        <img
+          src={bgImage}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover"
+          onError={(e) => {
+            console.error("Footer background image failed to load:", bgImage);
+          }}
+        />
 
-      {/* Subtle blueprint grid overlay for light theme */}
-      <div
-        className="absolute inset-0 opacity-[0.03] pointer-events-none"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(0,0,0,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.6) 1px, transparent 1px)",
-          backgroundSize: "40px 40px",
-        }}
-      />
-
-      {/* Hero CTA Banner */}
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 md:px-12 pt-12 z-10">
-        <div className="relative group overflow-hidden bg-gradient-to-r from-[#00529b] via-[#003e75] to-slate-900 rounded-[32px] p-8 sm:p-12 shadow-xl border border-sky-900/20">
-          {/* Decorative plane watermark */}
-          <svg
-            className="absolute -right-8 -bottom-10 w-72 h-72 text-white/[0.05] pointer-events-none transform -rotate-12 group-hover:scale-105 transition-transform duration-700"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
-          </svg>
-
-          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
-            <div className="space-y-3 text-center lg:text-left max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-amber-300 text-xs font-semibold uppercase tracking-wider backdrop-blur-md">
-                <span className="w-2 h-2 rounded-full bg-[#f05123] animate-pulse" />
-                Admissions Open 2026–2027
-              </div>
-              <h3
-                className="text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight"
-                style={{ fontFamily: '"Space Grotesk", sans-serif' }}
-              >
-                Start Your Career with Phoenix Institute
-              </h3>
-              <p
-                className="text-slate-200 text-sm sm:text-base leading-relaxed"
-                style={{ fontFamily: '"Inter", sans-serif' }}
-              >
-                Explore structured courses in aviation, hospitality, and travel,
-                with practical training and dedicated placement support.
-              </p>
-            </div>
-
-            <a
-              href="/contact"
-              className="group/btn no-underline bg-[#f05123] hover:bg-[#d94218] text-white text-sm font-semibold px-8 py-4 rounded-full inline-flex items-center gap-3 transition-all duration-300 shadow-lg shadow-orange-500/20 hover:shadow-orange-500/35 flex-shrink-0"
-              style={{ fontFamily: '"Inter", sans-serif' }}
-            >
-              <span>Apply Now</span>
-              <svg
-                className="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform duration-200"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Content Grid */}
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 md:px-12 pt-16 pb-12 z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-14 border-b border-slate-200/80">
-          {/* Brand Info & Badges */}
-          <div className="lg:col-span-5 space-y-5">
-            <a href="#" className="no-underline inline-block">
-              <img
-                src="/logo.png"
-                alt="Phoenix Logo"
-                className="h-10 w-auto object-contain"
-              />
-            </a>
-
-            <p
-              className="text-slate-600 text-sm leading-relaxed max-w-sm"
-              style={{ fontFamily: '"Inter", sans-serif' }}
-            >
-              Practical, industry-oriented training for careers in aviation,
-              hospitality, and travel, with hands-on exposure and dedicated
-              placement support.
-            </p>
-
-            {/* Program Highlights */}
-            <div className="flex flex-wrap gap-2 pt-1">
-              <span className="text-[11px] font-semibold text-[#00529b] bg-sky-50 border border-sky-200/80 px-3 py-1 rounded-full">
-                Practical Training
-              </span>
-              <span className="text-[11px] font-semibold text-amber-700 bg-amber-50 border border-amber-200/80 px-3 py-1 rounded-full">
-                Interview Preparation
-              </span>
-              <span className="text-[11px] font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200/80 px-3 py-1 rounded-full">
-                Placement Support
-              </span>
-            </div>
-
-            {/* Social Links */}
-            {/* <div className="flex items-center gap-3 pt-2">
-              {["linkedin", "instagram", "facebook", "twitter"].map(
-                (platform) => (
-                  <a
-                    key={platform}
-                    href="#"
-                    className="w-9 h-9 rounded-full bg-slate-100 hover:bg-[#00529b] border border-slate-200/80 flex items-center justify-center text-slate-600 hover:text-white transition-all duration-300 shadow-sm"
-                    aria-label={platform}
-                  >
-                    <SocialIcon type={platform} />
-                  </a>
-                ),
-              )}
-            </div> */}
-          </div>
-
-          {/* Quick Navigation Links */}
-          <div className="lg:col-span-3 space-y-4">
-            <h4
-              className="text-slate-900 font-semibold text-xs uppercase tracking-wider"
-              style={{ fontFamily: '"Space Grotesk", sans-serif' }}
-            >
-              Navigation
-            </h4>
-            <ul
-              className="space-y-3 list-none p-0 m-0 text-sm"
-              style={{ fontFamily: '"Inter", sans-serif' }}
-            >
-              {mainNavLinks.map((link) => (
-                <li key={link}>
-                  <a
-                    href="#"
-                    className="group no-underline text-slate-600 hover:text-[#00529b] transition-colors duration-200 inline-flex items-center gap-2"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#f05123] opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <span>{link}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Featured Courses Links */}
-          <div className="lg:col-span-4 space-y-4">
-            <h4
-              className="text-slate-900 font-semibold text-xs uppercase tracking-wider"
-              style={{ fontFamily: '"Space Grotesk", sans-serif' }}
-            >
-              Featured Programs
-            </h4>
-            <ul
-              className="space-y-3 list-none p-0 m-0 text-sm"
-              style={{ fontFamily: '"Inter", sans-serif' }}
-            >
-              {courseLinks.map((course, idx) => (
-                <li key={idx}>
-                  <a
-                    href="#"
-                    className="group no-underline text-slate-600 hover:text-[#00529b] transition-colors duration-200 inline-flex items-center gap-2"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#00529b] opacity-40 group-hover:opacity-100 transition-all" />
-                    <span>{course}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        {/* Bottom Legal / Copyright Bar */}
+        {/* Overlay for readability */}
         <div
-          className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500"
-          style={{ fontFamily: '"Inter", sans-serif' }}
-        >
-          <p>
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(5,15,30,0.55) 0%, rgba(5,15,30,0.35) 35%, rgba(5,15,30,0.6) 70%, rgba(5,15,30,0.85) 100%)",
+          }}
+        />
+
+        {/* Top content: headline + CTA */}
+        <div className="relative z-10 pt-16 pb-10 px-6 md:px-16 text-center">
+          <h2
+            className="m-0 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-white leading-tight drop-shadow-md"
+            style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
+          >
+            {headlinePrefix}{" "}
+            <span className="italic">{headlineAccent}</span> {headlineSuffix}
+          </h2>
+
+          {sub && (
+            <p className="mt-5 mb-0 text-sm sm:text-base text-white/85 max-w-2xl mx-auto leading-relaxed">
+              {sub}
+            </p>
+          )}
+
+          <a
+            href={ctaLink}
+            className="mt-8 inline-flex items-center justify-center text-sm font-semibold px-8 py-3.5 rounded-full text-white bg-[#9C1726]  transition-all duration-200 shadow-lg shadow-orange-900/20 hover:shadow-orange-900/30 no-underline"
+          >
+            {ctaText}
+          </a>
+        </div>
+
+        {/* Bottom dark glass contact card */}
+        <div className="relative z-10 px-4 sm:px-8 md:px-12 pb-8">
+          <div className="bg-slate-950/70 backdrop-blur-md border border-white/10 rounded-[24px] p-6 sm:p-8 md:p-10">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+              {/* Logo */}
+              <div className="md:col-span-3 flex md:justify-start justify-center">
+                <a href="#" className="no-underline inline-block">
+                  <img
+                    src={logo}
+                    alt="Logo"
+                    className="h-30 w-auto object-contain"
+                  />
+                </a>
+              </div>
+
+              {/* Branches */}
+              <div className="md:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {branches.map((branch) => (
+                  <div key={branch.label} className="space-y-2">
+                    <div className="flex items-center gap-2 text-white text-xs font-semibold tracking-wide">
+                      <Icon type="pin" className="w-3.5 h-3.5 text-[#f05123]" />
+                      {branch.label}
+                    </div>
+                    <p className="m-0 text-slate-300 text-xs sm:text-[13px] leading-relaxed">
+                      {branch.address}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Get in touch */}
+              <div className="md:col-span-4 space-y-3">
+                <h4 className="m-0 text-white text-xs font-semibold tracking-wide">
+                  GET IN TOUCH
+                </h4>
+
+                <div className="space-y-1">
+                  {phones.map((phone) => (
+                    <div
+                      key={phone}
+                      className="flex items-center gap-2 text-slate-300 text-xs sm:text-[13px]"
+                    >
+                      <Icon type="phone" className="w-3.5 h-3.5 text-[#f05123] flex-shrink-0" />
+                      {phone}
+                    </div>
+                  ))}
+                </div>
+
+                <div className="space-y-1">
+                  {emails.map((email) => (
+                    <div
+                      key={email}
+                      className="flex items-center gap-2 text-slate-300 text-xs sm:text-[13px]"
+                    >
+                      <Icon type="mail" className="w-3.5 h-3.5 text-[#f05123] flex-shrink-0" />
+                      {email}
+                    </div>
+                  ))}
+                </div>
+
+                {/* Socials */}
+                <div className="flex items-center gap-2 pt-2">
+                  {socials.map((platform) => (
+                    <a
+                      key={platform}
+                      href="#"
+                      aria-label={platform}
+                      className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#f05123] border border-white/15 flex items-center justify-center text-white transition-all duration-300"
+                    >
+                      <Icon type={platform} />
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom copyright line */}
+          <p className="text-center text-white/60 text-[11px] mt-5 mb-0">
             © {new Date().getFullYear()} Phoenix Institute of Aviation &
             Hospitality. All rights reserved.
           </p>
-
-          <div className="flex items-center gap-6">
-            <a
-              href="#"
-              className="no-underline text-slate-500 hover:text-slate-800 transition-colors"
-            >
-              Privacy Policy
-            </a>
-            <a
-              href="#"
-              className="no-underline text-slate-500 hover:text-slate-800 transition-colors"
-            >
-              Terms & Conditions
-            </a>
-            <button
-              onClick={scrollToTop}
-              className="w-9 h-9 rounded-full bg-slate-100 border border-slate-200/80 hover:bg-[#00529b] flex items-center justify-center text-slate-700 hover:text-white transition-all duration-300 shadow-sm"
-              aria-label="Back to top"
-            >
-              ↑
-            </button>
-          </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </div>
   );
 }

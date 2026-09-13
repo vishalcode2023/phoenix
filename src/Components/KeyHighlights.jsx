@@ -133,7 +133,7 @@ export default function CourseCards() {
             </span>
           </div>
           <h2
-            className="text-4xl sm:text-5xl md:text-[3.4rem] font-semibold text-gray-900 tracking-tight leading-[1.05]"
+            className="text-4xl sm:text-5xl md:text-[3.4rem] font-semibold text-gray-900 tracking-tight  leading-[1.05]"
             style={{ fontFamily: '"Space Grotesk", sans-serif' }}
           >
             Structured courses across aviation, hospitality & travel

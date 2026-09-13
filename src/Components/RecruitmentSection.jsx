@@ -122,9 +122,8 @@ export default function RecruitmentSection() {
           </div>
           <h2
             className="text-4xl sm:text-5xl md:text-6xl font-semibold text-slate-900 tracking-tight leading-[1.05] mb-4"
-            style={{ fontFamily: '"Space Grotesk", sans-serif' }}
           >
-            Where our students get hired
+            Where our students get <span className="text-4xl sm:text-5xl md:text-6xl font-semibold text-[#00529b] tracking-tight">hired</span> 
           </h2>
           <p
             className="text-slate-500 text-base leading-relaxed"

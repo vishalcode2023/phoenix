@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
 const navLinks = [
+  { name: "Home", path: "/" },
   {
     name: "Courses",
     path: "/courses",
@@ -16,7 +17,7 @@ const navLinks = [
       },
     ],
   },
-  { name: "About US", path: "/aboutus" },
+  { name: "About us", path: "/aboutus" },
   { name: "Contact us", path: "/contact" },
 ];
 
@@ -100,9 +101,28 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-3">
           <Link
             to="/contact"
-            className="no-underline bg-[#00529b] hover:bg-[#003e75] text-white text-sm font-semibold px-6 py-2.5 rounded-full inline-flex items-center gap-2 transition-all duration-200 shadow-sm"
+            className="no-underline bg-[#00529b] hover:bg-[#003e75] text-white text-sm font-semibold px-6 py-2.5 rounded-[13px] inline-flex items-center gap-2 transition-all duration-200 shadow-sm"
           >
             <span>Apply</span>
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+              />
+            </svg>
+          </Link>
+           <Link
+            to="/contact"
+            className="no-underline bg-[#9C1726] hover:bg-[#003e75] text-white text-sm font-semibold px-6 py-2.5 rounded-[13px] inline-flex items-center gap-2 transition-all duration-200 shadow-sm"
+          >
+            <span>Contact Us</span>
             <svg
               className="w-4 h-4"
               fill="none"
