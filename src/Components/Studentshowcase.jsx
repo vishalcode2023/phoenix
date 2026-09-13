@@ -112,9 +112,7 @@ export default function StudentShowcase() {
 
       {/* Full-bleed Marquee Showcase */}
       <div className="marquee-wrap relative">
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-[#f6f8fa] to-transparent z-10" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-[#f6f8fa] to-transparent z-10" />
-
+       
         <div
           ref={trackRef}
           className="marquee-track flex gap-6 md:gap-8 w-max px-4 sm:px-6 md:px-12 py-4"

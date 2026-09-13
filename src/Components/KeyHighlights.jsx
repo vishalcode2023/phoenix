@@ -2,58 +2,57 @@ import { useState } from "react";
 
 const courses = [
   {
-    code: "CC · 101",
-    title: "Cabin Crew Training",
-    duration: "12 months",
-    seats: "24 seats left",
+    code: "AHT · 01",
+    title: "Aviation, Hospitality and Travel Management",
+    duration: "11 months",
+    seats: "Batches forming",
     description:
-      "Master in-flight safety, luxury hospitality, and international aviation standards.",
+      "Cabin crew procedures, hospitality operations, and travel ticketing in one well-rounded program.",
     image:
       "https://plus.unsplash.com/premium_photo-1661746449875-2f8fb11b2251?w=800&auto=format&fit=crop&q=80&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Q2FiaW4lMjBDcmV3JTIwVHJhaW5pbmd8ZW58MHx8MHx8fDA%3D",
-    tag: "AASSC certified",
+    tag: "Most enrolled",
     tagBg: "bg-orange-50 text-[#f05123] border-orange-200/60",
   },
   {
-    code: "GH · 204",
-    title: "Ground Handling",
-    duration: "6 months",
-    seats: "9 seats left",
+    code: "AGS · 02",
+    title: "Airport Ground Services",
+    duration: "11 months",
+    seats: "Batches forming",
+    featured: true,
     description:
-      "Hands-on airport check-in, ramp operations, and baggage safety logistics.",
+      "Check-in operations, ramp procedures, baggage handling, and airport safety fundamentals.",
     image:
       "https://plus.unsplash.com/premium_photo-1664298927557-d751ca221bff?w=800&auto=format&fit=crop&q=80&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fEdyb3VuZCUyMEhhbmRsaW5nfGVufDB8fDB8fHww",
     tag: "High demand",
     tagBg: "bg-blue-50 text-[#00529b] border-blue-200/60",
-    featured: true,
   },
   {
-    code: "AM · 310",
-    title: "Aviation Management",
-    duration: "12 months",
-    seats: "31 seats left",
+    code: "HM · 03",
+    title: "Hospitality Management",
+    duration: "6 months",
+    seats: "Batches forming",
     description:
-      "CRS ticketing systems, airline operations, and passenger management.",
+      "Front-office operations, guest relations, and reservation systems for hotel careers.",
     image:
       "https://images.unsplash.com/photo-1485310818226-f01c4269687f?w=800&auto=format&fit=crop&q=80&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fEF2aWF0aW9uJTIwTWFuYWdlbWVudHxlbnwwfHwwfHx8MA%3D%3D",
-    tag: "Practical exposure",
+    tag: "Fastest track",
     tagBg: "bg-emerald-50 text-emerald-600 border-emerald-200/60",
   },
 ];
 
 const stats = [
-  { value: "94%", label: "placed within 6 months" },
-  { value: "38", label: "partner airlines & airports" },
-  { value: "1,200+", label: "graduates flying today" },
-  { value: "15 yrs", label: "training operators" },
+  { value: "6", label: "specialisation tracks" },
+  { value: "6–11 mo", label: "structured program lengths" },
+  { value: "Ongoing", label: "placement support" },
+  { value: "17–24", label: "typical admission age" },
 ];
 
-const airlines = [
-  "IndiGo",
-  "Vistara",
-  "Air India",
-  "SpiceJet",
-  "Emirates",
-  "Qatar Airways",
+const careerAreas = [
+  "Cabin Crew",
+  "Ground Staff",
+  "Hotel Front Office",
+  "Travel & Ticketing",
+  "Customer Service",
 ];
 
 function PlaneIcon({ className }) {
@@ -130,21 +129,21 @@ export default function CourseCards() {
               className="text-sm font-medium"
               style={{ fontFamily: '"Inter", sans-serif' }}
             >
-              Three tracks into the industry
+              Multiple tracks into the industry
             </span>
           </div>
           <h2
             className="text-4xl sm:text-5xl md:text-[3.4rem] font-semibold text-gray-900 tracking-tight leading-[1.05]"
             style={{ fontFamily: '"Space Grotesk", sans-serif' }}
           >
-            Aviation courses built around what carriers hire for
+            Structured courses across aviation, hospitality & travel
           </h2>
           <p
             className="mt-4 text-gray-500 text-base leading-relaxed max-w-md"
             style={{ fontFamily: '"Inter", sans-serif' }}
           >
-            Airline-grade instructors, real equipment, and cohorts that start
-            every quarter.
+            Practical, activity-based training with dedicated interview and
+            placement support built into every course.
           </p>
         </div>
 
@@ -249,10 +248,10 @@ export default function CourseCards() {
             className="text-xs uppercase tracking-wide text-gray-400 mb-3"
             style={{ fontFamily: '"Inter", sans-serif' }}
           >
-            Graduates placed at
+            Career paths our courses prepare you for
           </p>
           <div className="flex flex-wrap justify-center md:justify-start gap-x-5 gap-y-2">
-            {airlines.map((name, i) => (
+            {careerAreas.map((name, i) => (
               <span
                 key={i}
                 className="text-gray-400 font-medium text-sm"

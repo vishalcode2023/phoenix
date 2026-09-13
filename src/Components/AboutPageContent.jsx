@@ -5,31 +5,27 @@ import Footer from "./Footer";
 const airlinePartners = [
   {
     name: "Air India",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Air_India_Logo_2023.svg/1024px-Air_India_Logo_2023.svg.png",
+    logo: "https://imgs.search.brave.com/Z_plwk6gxfr8yBP-ytzasPJNQwdEcZJAuLOfHuYmwm8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudHJhdmVsYW5k/bGVpc3VyZWFzaWEu/Y29tL3dwLWNvbnRl/bnQvdXBsb2Fkcy9z/aXRlcy8yLzIwMjMv/MDgvMTExMTAxMjIv/RmVhdHVyZWQtSW5z/aWRlLTItMi0xMDI0/eDU3Ni5qcGc",
   },
   {
     name: "IndiGo",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/IndiGo_Airlines_logo.svg/1024px-IndiGo_Airlines_logo.svg.png",
+    logo: "https://imgs.search.brave.com/8dqg6BcAt-CJpDr8Cimze2-Ugi2pbe7CT8gfLgW-jXI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9sb2dv/aGlzdG9yeS5uZXQv/d3AtY29udGVudC91/cGxvYWRzLzIwMjMv/MDkvSW5kaWdvLUxv/Z28tMTAyNHg1NzYu/anBn",
   },
   {
     name: "SpiceJet",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/SpiceJet_logo.svg/1024px-SpiceJet_logo.svg.png",
+    logo: "https://imgs.search.brave.com/OVh9h6NuR_PMEphGBevWB9NsilPTfq6bkDeqSVxqnp0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly8xMDAw/bG9nb3MubmV0L3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDIxLzA3/L1NwaWNlSmV0LUxv/Z28tNTAweDMxNC5q/cGc",
   },
   {
     name: "Akasa Air",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Akasa_Air_Logo.svg/1024px-Akasa_Air_Logo.svg.png",
+    logo: "https://imgs.search.brave.com/jh9CFgphXkVJ-pn-ugj0BYHmAqWkfUUm7K__QY2bxAY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9sb2dv/d2lrLmNvbS9jb250/ZW50L3VwbG9hZHMv/aW1hZ2VzL2FrYXNh/LWFpcjQyMDMuanBn",
   },
   {
     name: "Emirates",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emirates_logo.svg/1024px-Emirates_logo.svg.png",
+    logo: "https://imgs.search.brave.com/QH77N6kfJI2CUjinfeXARdEcf48zb-nfx0TOjZh1N6I/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9kd2ds/b2dvLmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAxNi8wNC9F/bWlyYXRlcy1sb2dv/LnBuZw",
   },
   {
     name: "Qatar Airways",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Qatar_Airways_Logo.svg/1024px-Qatar_Airways_Logo.svg.png",
-  },
-  {
-    name: "AirAsia",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/AirAsia_New_Logo.svg/1024px-AirAsia_New_Logo.svg.png",
+    logo: "https://imgs.search.brave.com/fxDBpLJ8Vl32E3N10vPTwdUCoZKqyIPcoyeuD9GfpU4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/YnJhbmRjb2xvcmNv/ZGUuY29tL2ltYWdl/cy9jb2xvci1wYWxl/dHRlL3FhdGFyLWFp/cndheXMucG5n",
   },
 ];
 
@@ -47,7 +43,7 @@ export default function AboutPageContent() {
         <div className="relative w-full min-h-[620px] sm:min-h-[680px] md:min-h-[730px] rounded-[32px] md:rounded-[40px] overflow-hidden shadow-2xl flex flex-col justify-between pb-12">
           {/* Background Aviation Image */}
           <img
-            src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=2000&q=80"
+            src="/aboutus.png"
             alt="Phoenix Academy Mysore Aviation"
             className="absolute inset-0 w-full h-full object-cover object-center"
           />
@@ -217,7 +213,7 @@ export default function AboutPageContent() {
           <div className="lg:col-span-5">
             <div className="relative rounded-3xl overflow-hidden border border-slate-200/80 shadow-2xl bg-slate-900 group">
               <img
-                src="https://images.unsplash.com/photo-1529074963764-98f45c47344b?auto=format&fit=crop&w=1000&q=80"
+                src="/img-mob.png"
                 alt="Cabin Crew Practical Training"
                 className="w-full h-[460px] object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
               />

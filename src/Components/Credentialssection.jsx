@@ -173,17 +173,17 @@ export default function CredentialsSection() {
               className="text-4xl sm:text-5xl md:text-6xl font-semibold text-slate-900 tracking-tight leading-[1.05]"
               style={{ fontFamily: '"Space Grotesk", sans-serif' }}
             >
-              Built like a real airline
+              A curriculum built
               <br />
-              training floor
+              around practical skills
             </h2>
           </div>
           <p
             className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-xs md:text-right"
             style={{ fontFamily: '"Inter", sans-serif' }}
           >
-            Every credential below is something you'll actually be asked about
-            in an airline interview.
+            Every module below is something you'll use in the classroom — and
+            later in an interview.
           </p>
         </div>
 
@@ -234,11 +234,11 @@ export default function CredentialsSection() {
           className="mt-14 md:mt-16 pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-xs text-slate-500 text-center"
           style={{ fontFamily: '"Inter", sans-serif' }}
         >
-          <span>AASSC accredited</span>
+          <span>Structured course materials</span>
           <span className="hidden sm:inline text-slate-300">•</span>
-          <span>Curriculum aligned to national skill standards</span>
+          <span>Practical, activity-based classes</span>
           <span className="hidden sm:inline text-slate-300">•</span>
-          <span>Trusted by 40+ airline & airport partners</span>
+          <span>Ongoing placement support</span>
         </div>
       </div>
     </section>

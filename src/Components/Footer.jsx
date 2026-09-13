@@ -1,13 +1,13 @@
 import React from "react";
 
-const mainNavLinks = ["About Phoenix", "Courses", "Placements"];
+const mainNavLinks = ["About Us", "Courses", "Placement Support"];
 
 const courseLinks = [
-  "Commercial Pilot Training",
-  "Cabin Crew & Hospitality",
-  "Airport Ground Handling",
-  "Flight Dispatcher Course",
-  "Aviation Security & Safety",
+  "Aviation, Hospitality & Travel Management",
+  "Hospitality, Travel & Customer Service",
+  "Hospitality Management",
+  "Aviation & Hospitality Services",
+  "Airport Ground Services",
 ];
 
 // Lightweight SVG Social Icons
@@ -87,20 +87,19 @@ export default function Footer() {
                 className="text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight"
                 style={{ fontFamily: '"Space Grotesk", sans-serif' }}
               >
-                Start Your Aviation Career with Phoenix
+                Start Your Career with Phoenix Institute
               </h3>
               <p
                 className="text-slate-200 text-sm sm:text-base leading-relaxed"
                 style={{ fontFamily: '"Inter", sans-serif' }}
               >
-                Explore industry-accredited courses, top-tier placements, and
-                ground-floor aviation training guided by senior airline
-                captains.
+                Explore structured courses in aviation, hospitality, and travel,
+                with practical training and dedicated placement support.
               </p>
             </div>
 
             <a
-              href="#"
+              href="/contact"
               className="group/btn no-underline bg-[#f05123] hover:bg-[#d94218] text-white text-sm font-semibold px-8 py-4 rounded-full inline-flex items-center gap-3 transition-all duration-300 shadow-lg shadow-orange-500/20 hover:shadow-orange-500/35 flex-shrink-0"
               style={{ fontFamily: '"Inter", sans-serif' }}
             >
@@ -140,20 +139,21 @@ export default function Footer() {
               className="text-slate-600 text-sm leading-relaxed max-w-sm"
               style={{ fontFamily: '"Inter", sans-serif' }}
             >
-              Empowering future aviation professionals with certified training
-              programs, hands-on exposure, and world-class placement partners.
+              Practical, industry-oriented training for careers in aviation,
+              hospitality, and travel, with hands-on exposure and dedicated
+              placement support.
             </p>
 
-            {/* Accreditation Badges */}
+            {/* Program Highlights */}
             <div className="flex flex-wrap gap-2 pt-1">
               <span className="text-[11px] font-semibold text-[#00529b] bg-sky-50 border border-sky-200/80 px-3 py-1 rounded-full">
-                DGCA Aligned
+                Practical Training
               </span>
               <span className="text-[11px] font-semibold text-amber-700 bg-amber-50 border border-amber-200/80 px-3 py-1 rounded-full">
-                AASSC Certified
+                Interview Preparation
               </span>
               <span className="text-[11px] font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200/80 px-3 py-1 rounded-full">
-                100% Placement Support
+                Placement Support
               </span>
             </div>
 
@@ -233,8 +233,8 @@ export default function Footer() {
           style={{ fontFamily: '"Inter", sans-serif' }}
         >
           <p>
-            © {new Date().getFullYear()} Phoenix Aviation Academy. All rights
-            reserved.
+            © {new Date().getFullYear()} Phoenix Institute of Aviation &
+            Hospitality. All rights reserved.
           </p>
 
           <div className="flex items-center gap-6">

@@ -6,8 +6,14 @@ const navLinks = [
     name: "Courses",
     path: "/courses",
     subLinks: [
-      { name: "Cabin Crew", path: "/courses/cabin-crew" },
-      { name: "Ground Handling", path: "/courses/ground-handling" },
+      {
+        name: "Aviation & Hospitality",
+        path: "/courses/aviation-hospitality-travel-management",
+      },
+      {
+        name: "Airport Ground Services",
+        path: "/courses/airport-ground-services",
+      },
     ],
   },
   { name: "About US", path: "/aboutus" },

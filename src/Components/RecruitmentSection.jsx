@@ -1,49 +1,29 @@
 import React from "react";
 
 const recruiters = [
-  {
-    name: "Air India SATS",
-    logo: "https://img-cdn.publive.online/fit-in/1280x960/filters:format(webp)/afaqs/media/media_files/2025/11/07/air-india-2025-11-07-14-58-30.jpg",
-    stripe: "bg-[#00529b]",
-  },
-  {
-    name: "IndiGo",
-    logo: "https://imgs.search.brave.com/w2ioJm96rR58U-gFtd2OzznidtolvmdoL1tA_o28eZ4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly8xMDAw/bG9nb3MubmV0L3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDIxLzA3/L0luZGlHby1Mb2dv/LTUwMHgzMTQuanBn",
-    stripe: "bg-[#f05123]",
-  },
-  {
-    name: "Emirates",
-    logo: "https://imgs.search.brave.com/AAzn8wKD6F56gqhnI3KcMeHWprZS5hyEbtB5_JMQSN8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly8xMDAw/bG9nb3MubmV0L3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDIwLzAz/L0VtaXJhdGVzLWxv/Z28tNTAweDI4MS5q/cGc",
-    stripe: "bg-slate-700",
-  },
-  {
-    name: "Plaza Premium Group",
-    logo: "https://imgs.search.brave.com/NiSN1Nvdp-rdwYbb4vykUagVBRqWzgxcBZ2ARDvfnfM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9haXJw/b3J0aW5kdXN0cnkt/bmV3cy5jb20vd3At/Y29udGVudC91cGxv/YWRzL3NpdGVzLzIv/MjAyMy8wNC9QbGF6/YVByZW1pdW0tTG9n/by5wbmc",
-    stripe: "bg-[#00529b]",
-  },
-  {
-    name: "Air India",
-    logo: "https://imgs.search.brave.com/JMBhGbwzoShFLjlJNNFYh78phsmNTUMkrz3IW7SuOhw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzVkL2E1/L2Y5LzVkYTVmOTQ5/YzYxMjEyOTIyNjJm/ZTljNmJjNTFkNjQ1/LmpwZw",
-    stripe: "bg-[#f05123]",
-  },
-  {
-    name: "Vistara",
-    logo: "https://imgs.search.brave.com/9tsDNDoUL8zWkJ3_xskZWgMjmKrXzb2qP6YaKaJnRjw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aGVo/YXJkY29weS5jby93/cC1jb250ZW50L3Vw/bG9hZHMvVmlzdGFy/YS1JbWFnZXMtNy0x/MjAweDgwNS5wbmc",
-    stripe: "bg-slate-700",
-  },
+  { name: "Airlines", stripe: "bg-[#00529b]" },
+  { name: "Airport Ground Ops", stripe: "bg-[#f05123]" },
+  { name: "Hotels & Resorts", stripe: "bg-slate-700" },
+  { name: "Travel Agencies", stripe: "bg-[#00529b]" },
+  { name: "Airport Lounges", stripe: "bg-[#f05123]" },
+  { name: "Customer Service Teams", stripe: "bg-slate-700" },
 ];
 
 const features = [
   {
     step: "01",
-    tag: "Flight faculty",
-    title: "Industry-experienced trainers",
+    tag: "Faculty",
+    title: "Industry-informed trainers",
     description:
-      "Trained directly by active airline commanders, senior cabin crew leads, and ground operation managers.",
-    points: ["Real tarmac insights", "Mock aircraft drills", "AASSC standards"],
+      "Instructors familiar with the practical demands of aviation, hospitality, and travel roles, keeping lessons grounded in real workplace expectations.",
+    points: [
+      "Practical, activity-based classes",
+      "Mock service drills",
+      "Real workplace scenarios",
+    ],
     stat: {
-      value: "12+",
-      label: "Years average flight-deck & cabin experience",
+      value: "6",
+      label: "Specialisation tracks to choose from",
     },
     accentColor: "from-[#00529b] to-sky-600",
     lightBg: "bg-blue-50/80",
@@ -55,13 +35,13 @@ const features = [
     tag: "Placement cell",
     title: "Dedicated job assistance",
     description:
-      "End-to-end career support including airline CV building, grooming transformations, and guaranteed interview walk-ins.",
+      "End-to-end career support including resume building, mock interviews, and guidance as placement opportunities arise.",
     points: [
-      "100% placement support",
-      "Airline interview coaching",
-      "Salary negotiation",
+      "Ongoing placement support",
+      "Mock interview coaching",
+      "Resume & cover letter help",
     ],
-    stat: { value: "3 wks", label: "Average time to first airline interview" },
+    stat: { value: "Ongoing", label: "Placement support after graduation" },
     accentColor: "from-[#f05123] to-amber-500",
     lightBg: "bg-orange-50/80",
     textColor: "text-[#f05123]",
@@ -69,18 +49,18 @@ const features = [
   },
   {
     step: "03",
-    tag: "Alumni network",
-    title: "A network that keeps hiring",
+    tag: "Career guidance",
+    title: "Support choosing your path",
     description:
-      "Graduates refer graduates — alumni working at partner airlines flag openings to our placement cell before they're posted publicly.",
+      "Trained student counsellors help you compare tracks and understand potential career paths before and during your course.",
     points: [
-      "Referral-first hiring",
-      "Active alumni WhatsApp groups",
-      "Batch reunions with recruiters",
+      "One-on-one counselling",
+      "Course selection guidance",
+      "Clear eligibility criteria",
     ],
     stat: {
-      value: "500+",
-      label: "Alumni currently working across partner airlines",
+      value: "17–24",
+      label: "Typical admission age range",
     },
     accentColor: "from-emerald-500 to-teal-500",
     lightBg: "bg-emerald-50/80",
@@ -90,10 +70,10 @@ const features = [
 ];
 
 const stats = [
-  { value: "500+", label: "Graduates placed" },
-  { value: "40+", label: "Airline & airport partners" },
-  { value: "92%", label: "Placement rate" },
-  { value: "15 yrs", label: "Training legacy" },
+  { value: "6", label: "Specialisation tracks" },
+  { value: "6–11 mo", label: "Program lengths" },
+  { value: "Ongoing", label: "Placement support" },
+  { value: "17–24", label: "Admission age range" },
 ];
 
 function LogoChip({ item }) {
@@ -102,17 +82,8 @@ function LogoChip({ item }) {
       <span
         className={`w-2 h-12 md:h-14 rounded-full flex-shrink-0 items-center ${item.stripe}`}
       />
-      <img
-        src={item.logo}
-        alt={item.name}
-        className="h-12 md:h-20 max-w-[180px] object-contain"
-        onError={(e) => {
-          e.currentTarget.style.display = "none";
-          e.currentTarget.nextSibling.style.display = "inline-block";
-        }}
-      />
       <span
-        className="hidden text-slate-700 font-semibold text-lg md:text-xl whitespace-nowrap"
+        className="text-slate-700 font-semibold text-lg md:text-xl whitespace-nowrap"
         style={{ fontFamily: '"Space Grotesk", sans-serif' }}
       >
         {item.name}

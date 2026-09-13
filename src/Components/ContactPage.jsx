@@ -35,10 +35,10 @@ export default function ContactPage() {
           1. HERO SECTION WITH EMBEDDED NAVBAR
          ========================================== */}
       <section className="max-w-[1400px] mx-auto px-2 sm:px-4 md:px-6 pt-3">
-        <div className="relative w-full min-h-[420px] sm:min-h-[480px] md:min-h-[520px] rounded-[32px] md:rounded-[40px] overflow-hidden shadow-2xl flex flex-col justify-between pb-10">
+        <div className="relative w-full min-h-[420px] sm:min-h-[680px] md:min-h-[680px] rounded-[32px] md:rounded-[40px] overflow-hidden shadow-2xl flex flex-col justify-between pb-10">
           {/* Background Image */}
           <img
-            src="https://images.unsplash.com/photo-1519074069444-1ba4eaa1674a?auto=format&fit=crop&w=2000&q=80"
+            src="/aboutus.png"
             alt="Contact Phoenix Academy Mysore"
             className="absolute inset-0 w-full h-full object-cover object-center"
           />
