@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../Router/Navbar";
 import Footer from "./Footer";
+import StudentShowcase from "./Studentshowcase";
 
 // ============================================================
 // TRAINING TOPICS
@@ -417,8 +418,7 @@ export default function CabinCrewCoursePage() {
                   inline-flex
                   items-center
                   gap-2.5
-                  bg-[#00529b]
-                  hover:bg-[#003e75]
+                  bg-[#9C1726]
                   text-white
                   text-sm
                   font-semibold
@@ -1090,6 +1090,8 @@ export default function CabinCrewCoursePage() {
         </div>
       </section>
 
+      <StudentShowcase />
+
       {/* =====================================================
           6. CTA
       ====================================================== */}
@@ -1176,30 +1178,7 @@ export default function CabinCrewCoursePage() {
 
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Link
-                to="/contact"
-                className="
-                  no-underline
-                  inline-flex
-                  items-center
-                  justify-center
-                  gap-2
-                  bg-white
-                  text-[#04213a]
-                  text-sm
-                  font-semibold
-                  px-7
-                  py-3.5
-                  rounded-full
-                  hover:bg-gray-100
-                  transition-all
-                  duration-200
-                  shadow-lg
-                "
-              >
-                Enroll in this program
-                <ArrowIcon />
-              </Link>
+              
 
               <Link
                 to="/contact"

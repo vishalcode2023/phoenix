@@ -83,10 +83,7 @@ export default function ContactPage() {
               <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-50 border border-sky-200/80 text-[#00529b] text-xs font-semibold uppercase tracking-wider mb-3">
                 Reach Out Directly
               </span>
-              <h2
-                className="text-2xl sm:text-3xl font-bold text-slate-900 leading-tight"
-               
-              >
+              <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 leading-tight">
                 Visit Our Mysore Campus or Call Us
               </h2>
             </div>
@@ -101,8 +98,8 @@ export default function ContactPage() {
                   Mysore Campus
                 </h4>
                 <p className="text-sm text-slate-600 mt-1 leading-relaxed">
-                  #123, Heritage Boulevard, Main Aviation Road, Near City
-                  Center, Mysore, Karnataka - 570001
+                  Diyan Complex, shop No.23/E 1,2nd floor, opp. KHB Complex,
+                  Kuvempu Nagara, Mysuru, Karnataka 570023
                 </p>
               </div>
             </div>
@@ -160,10 +157,7 @@ export default function ContactPage() {
           {/* Right Column: Interactive Form */}
           <div className="lg:col-span-7">
             <div className="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200/80 shadow-xl">
-              <h3
-                className="text-2xl font-bold text-slate-900 mb-2"
-               
-              >
+              <h3 className="text-2xl font-bold text-slate-900 mb-2">
                 Send Us a Message
               </h3>
               <p className="text-sm text-slate-600 mb-6">
@@ -263,7 +257,7 @@ export default function ContactPage() {
 
                 <button
                   type="submit"
-                  className="w-full bg-[#00529b] hover:bg-[#003e75] text-white font-semibold py-3.5 rounded-xl shadow-lg transition-all duration-300 text-sm"
+                  className="w-full bg-[#941624]  text-white font-semibold py-3.5 rounded-xl shadow-lg transition-all duration-300 text-sm"
                 >
                   Submit Inquiry
                 </button>
@@ -279,10 +273,10 @@ export default function ContactPage() {
       <section className="max-w-6xl mx-auto px-4 sm:px-6 md:px-12 pb-16">
         <div className="rounded-3xl overflow-hidden shadow-lg border border-slate-200/80 bg-slate-200 h-[380px] relative">
           <iframe
-            title="Phoenix Academy Mysore Location"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62371.76189914488!2d76.6134812384666!3d12.305163013824557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859af2f971cb5%3A0x2ad10600a33c1628!2sMysuru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+            title="Phoenix Institute of Aviation and Hospitality - Mysore"
+            src="https://www.google.com/maps?q=Phoenix%20Institute%20of%20Aviation%20and%20Hospitality%2C%20Mysuru%2C%20Karnataka&ll=12.2861022,76.6253994&z=17&output=embed"
             className="w-full h-full border-0"
-            allowFullScreen=""
+            allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           />

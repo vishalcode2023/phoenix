@@ -9,7 +9,7 @@ export default function HeroSection({
   headline = "Phoenix Academy, Mysore's 1st Aviation Institute",
   sub = "Pioneering cabin crew and hospitality training in Mysore with 100% placement support.",
   ctaText = "Begin Your Journey",
-  ctaLink = "#",
+  ctaLink = "/contact",
 }) {
   const mobPoster = mobilePosterImage || posterImage;
 
@@ -83,7 +83,7 @@ export default function HeroSection({
 
           <a
             href={ctaLink}
-            className="mt-6 inline-flex items-center justify-center text-xs sm:text-sm font-medium px-8 py-3.5 rounded-full text-gray-900 bg-white hover:bg-gray-100 transition-all duration-200 shadow-md hover:shadow-lg no-underline"
+            className="mt-6 inline-flex items-center justify-center text-xs sm:text-sm font-medium px-8 py-3.5 rounded-full text-white bg-[#9C1726] hover:bg-gray-100 transition-all duration-200 shadow-md hover:shadow-lg no-underline"
           >
             {ctaText}
           </a>

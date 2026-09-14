@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../Router/Navbar";
 import Footer from "./Footer";
+import StudentShowcase from "./Studentshowcase";
 
 // ============================================================
 // AIRPORT GROUND OPERATIONS PAGE
@@ -406,7 +407,7 @@ export default function AirportGroundOperationsPage() {
             <div className="flex flex-wrap gap-3">
               <Link
                 to="/contact"
-                className="no-underline inline-flex items-center gap-2.5 bg-[#00529b] hover:bg-[#003e75] text-white text-sm font-semibold px-7 py-3.5 rounded-full transition-all duration-200 shadow-lg"
+                className="no-underline inline-flex items-center gap-2.5 bg-[#9C1726]  text-white text-sm font-semibold px-7 py-3.5 rounded-full transition-all duration-200 shadow-lg"
               >
                 Enroll in this program
                 <ArrowIcon />
@@ -898,6 +899,8 @@ export default function AirportGroundOperationsPage() {
         </div>
       </section>
 
+      <StudentShowcase/>
+
       {/* =====================================================
           8. CTA
       ====================================================== */}
@@ -937,8 +940,6 @@ export default function AirportGroundOperationsPage() {
                 Apply Now
                 <ArrowIcon />
               </Link>
-
-             
             </div>
           </div>
         </div>

@@ -78,8 +78,8 @@ export default function AboutPageContent() {
             {/* White Pill CTA Button */}
             <div className="pt-2">
               <a
-                href="#journey"
-                className="no-underline bg-white hover:bg-slate-100 text-slate-900 font-semibold text-sm sm:text-base px-8 py-3.5 rounded-full shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 inline-block"
+                href="/contact"
+                className="no-underline bg-[#9C1726] hover:bg-slate-100 text-white font-semibold text-sm sm:text-base px-8 py-3.5 rounded-full shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 inline-block"
               >
                 Begin Your Journey
               </a>

@@ -202,7 +202,7 @@ export default function FacultyPage() {
             <div className="flex flex-wrap gap-3">
               <a
                 href="#faculty"
-                className="no-underline inline-flex items-center gap-2.5 bg-[#00529b] hover:bg-[#003e75] text-white text-sm font-semibold px-7 py-3.5 rounded-full transition-all duration-200 shadow-lg"
+                className="no-underline inline-flex items-center gap-2.5 bg-[#9C1726] text-white text-sm font-semibold px-7 py-3.5 rounded-full transition-all duration-200 shadow-lg"
               >
                 Meet our faculty
                 <ArrowIcon />
@@ -534,7 +534,7 @@ export default function FacultyPage() {
             </div>
 
             <Link
-              to="/courses"
+              to="/courses/aviation-hospitality-travel-management"
               className="no-underline inline-flex items-center justify-center gap-2 bg-white text-[#04213a] text-sm font-semibold px-7 py-3.5 rounded-full hover:bg-gray-100 transition-all duration-200"
             >
               Explore our courses

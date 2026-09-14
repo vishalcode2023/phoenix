@@ -38,37 +38,62 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [mobileCoursesOpen, setMobileCoursesOpen] = useState(false);
 
+  const closeMobileMenu = () => {
+    setIsOpen(false);
+    setMobileCoursesOpen(false);
+  };
+
   return (
-    <div className="w-full px-3 sm:px-5 md:px-8 pt-3 md:pt-5 top-0 z-50">
-      {/* ================= NAVBAR ================= */}
+    <div className="relative w-full px-3 sm:px-5 md:px-8 pt-3 md:pt-5 z-50">
+      {/* =========================================================
+          NAVBAR
+      ========================================================= */}
       <header
         className="
+          relative
           w-full
           bg-gray-100
-          px-4 py-3
-          md:px-8 md:py-4
-          flex items-center justify-between
+          px-4
+          py-3
+          md:px-8
+          md:py-4
+          flex
+          items-center
+          justify-between
           rounded-[24px]
           md:rounded-[32px]
           shadow-md
-          border border-gray-200
+          border
+          border-gray-200
         "
       >
-        {/* ================= LOGO ================= */}
-        <Link to="/" className="no-underline flex items-center gap-3 shrink-0">
-          <div className="flex flex-col">
-            <img
-              src="/logo.png"
-              alt="Phoenix Logo"
-              className="
-                w-19
-                object-contain
-              "
-            />
-          </div>
+        {/* =====================================================
+            LOGO
+        ===================================================== */}
+        <Link
+          to="/"
+          onClick={closeMobileMenu}
+          className="
+            no-underline
+            flex
+            items-center
+            shrink-0
+          "
+        >
+          <img
+            src="/logo.png"
+            alt="Phoenix Logo"
+            className="
+              w-20
+              h-auto
+              object-contain
+            "
+          />
         </Link>
 
-        {/* ================= DESKTOP NAVIGATION ================= */}
+        {/* =====================================================
+            DESKTOP NAVIGATION
+        ===================================================== */}
         <ul
           className="
             hidden
@@ -81,21 +106,20 @@ export default function Navbar() {
             p-0
           "
         >
-          {navLinks.map((l) => (
-            <li key={l.name} className="relative group py-2">
-              {/* Main Navigation Link */}
+          {navLinks.map((link) => (
+            <li key={link.name} className="relative group py-2">
               <NavLink
-                to={l.path}
+                to={link.path}
                 className={({ isActive }) =>
                   `
                     no-underline
                     text-sm
-                    transition-colors
-                    duration-200
                     flex
                     items-center
                     gap-1.5
                     whitespace-nowrap
+                    transition-colors
+                    duration-200
                     ${
                       isActive
                         ? "text-[#00529b] font-semibold"
@@ -104,10 +128,9 @@ export default function Navbar() {
                   `
                 }
               >
-                <span>{l.name}</span>
+                <span>{link.name}</span>
 
-                {/* Dropdown Arrow */}
-                {l.subLinks && (
+                {link.subLinks && (
                   <svg
                     className="
                       w-3.5
@@ -130,8 +153,10 @@ export default function Navbar() {
                 )}
               </NavLink>
 
-              {/* ================= COURSES DROPDOWN ================= */}
-              {l.subLinks && (
+              {/* =================================================
+                  DESKTOP COURSES DROPDOWN
+              ================================================= */}
+              {link.subLinks && (
                 <div
                   className="
                     absolute
@@ -141,8 +166,8 @@ export default function Navbar() {
                     pt-3
                     hidden
                     group-hover:block
-                    w-[270px]
-                    z-50
+                    w-[280px]
+                    z-[100]
                   "
                 >
                   <div
@@ -153,24 +178,24 @@ export default function Navbar() {
                       border
                       border-gray-100
                       py-2
-                      flex
-                      flex-col
                       overflow-hidden
                     "
                   >
-                    {l.subLinks.map((sub) => (
+                    {link.subLinks.map((sub) => (
                       <NavLink
                         key={sub.name}
                         to={sub.path}
                         className={({ isActive }) =>
                           `
+                            block
+                            w-full
                             px-5
                             py-3
                             text-sm
                             no-underline
                             whitespace-nowrap
-                            transition-colors
-                            duration-150
+                            transition-all
+                            duration-200
                             ${
                               isActive
                                 ? "bg-sky-50 text-[#00529b] font-semibold"
@@ -189,10 +214,13 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* ================= DESKTOP ACTION BUTTONS ================= */}
+        {/* =====================================================
+            DESKTOP BUTTONS
+        ===================================================== */}
         <div className="hidden xl:flex items-center gap-3 shrink-0">
-         
-          {/* Contact Us */}
+  
+
+          {/* Contact */}
           <Link
             to="/contact"
             className="
@@ -207,6 +235,7 @@ export default function Navbar() {
               rounded-[13px]
               inline-flex
               items-center
+              justify-center
               gap-2
               transition-all
               duration-200
@@ -232,12 +261,15 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* ================= MOBILE / TABLET ACTION AREA ================= */}
+        {/* =====================================================
+            MOBILE / TABLET RIGHT SIDE
+        ===================================================== */}
         <div className="flex xl:hidden items-center gap-2">
-          {/* Apply Button */}
+          {/* Mobile Apply */}
           <Link
             to="/apply"
             className="
+              md:hidden
               no-underline
               bg-[#00529b]
               hover:bg-[#003e75]
@@ -252,7 +284,6 @@ export default function Navbar() {
               gap-1
               transition-all
               duration-200
-              md:hidden
             "
           >
             <span>Apply</span>
@@ -272,8 +303,9 @@ export default function Navbar() {
             </svg>
           </Link>
 
-          {/* Menu Button */}
+          {/* Hamburger */}
           <button
+            type="button"
             onClick={() => setIsOpen(!isOpen)}
             className="
               p-2
@@ -284,6 +316,7 @@ export default function Navbar() {
               duration-200
             "
             aria-label="Toggle Menu"
+            aria-expanded={isOpen}
           >
             <svg
               className="w-6 h-6"
@@ -311,133 +344,156 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* ================= MOBILE NAVIGATION ================= */}
+      {/* =========================================================
+          MOBILE MENU
+      ========================================================= */}
       {isOpen && (
         <div
           className="
             xl:hidden
             mt-3
+            w-full
             bg-white
             rounded-[24px]
-            px-6
-            py-5
-            shadow-lg
+            shadow-xl
             border
             border-gray-200
-            flex
-            flex-col
-            gap-4
+            overflow-hidden
           "
         >
-          {navLinks.map((l) =>
-            l.subLinks ? (
-              <div key={l.name} className="flex flex-col gap-2">
-                {/* Courses Toggle */}
-                <button
-                  onClick={() => setMobileCoursesOpen(!mobileCoursesOpen)}
-                  className="
-                    flex
-                    items-center
-                    justify-between
-                    text-left
-                    text-sm
-                    font-medium
-                    text-[#1e293b]
-                    bg-transparent
-                    border-none
-                    p-0
-                    focus:outline-none
-                    cursor-pointer
-                    w-full
-                  "
-                >
-                  <span>{l.name}</span>
-
-                  <svg
-                    className={`
-                      w-4
-                      h-4
-                      transition-transform
-                      duration-200
-                      ${mobileCoursesOpen ? "rotate-180" : ""}
-                    `}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </button>
-
-                {/* Course Submenu */}
-                {mobileCoursesOpen && (
-                  <div
-                    className="
-                      pl-4
-                      flex
-                      flex-col
-                      gap-3
-                      border-l-2
-                      border-sky-100
-                      my-1
-                    "
-                  >
-                    {l.subLinks.map((sub) => (
-                      <NavLink
-                        key={sub.name}
-                        to={sub.path}
-                        onClick={() => {
-                          setIsOpen(false);
-                          setMobileCoursesOpen(false);
-                        }}
-                        className={({ isActive }) =>
-                          `
-                            no-underline
-                            text-xs
-                            transition-colors
-                            duration-200
-                            ${
-                              isActive
-                                ? "text-[#00529b] font-semibold"
-                                : "text-slate-600 font-medium hover:text-[#00529b]"
-                            }
-                          `
-                        }
+          <nav className="w-full px-5 py-5">
+            <div className="flex flex-col">
+              {navLinks.map((link) => (
+                <div key={link.name}>
+                  {link.subLinks ? (
+                    /* =================================================
+                       MOBILE COURSES
+                    ================================================= */
+                    <div className="w-full">
+                      <button
+                        type="button"
+                        onClick={() => setMobileCoursesOpen(!mobileCoursesOpen)}
+                        className="
+                          w-full
+                          flex
+                          items-center
+                          justify-between
+                          text-left
+                          bg-transparent
+                          border-0
+                          outline-none
+                          cursor-pointer
+                          px-3
+                          py-3.5
+                          text-[15px]
+                          font-medium
+                          text-[#1e293b]
+                          hover:text-[#00529b]
+                          transition-colors
+                          duration-200
+                        "
                       >
-                        {sub.name}
-                      </NavLink>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ) : (
-              <NavLink
-                key={l.name}
-                to={l.path}
-                onClick={() => setIsOpen(false)}
-                className={({ isActive }) =>
-                  `
-                    no-underline
-                    text-sm
-                    transition-colors
-                    duration-200
-                    ${
-                      isActive
-                        ? "text-[#00529b] font-semibold"
-                        : "text-[#1e293b] font-medium hover:text-[#00529b]"
-                    }
-                  `
-                }
-              >
-                {l.name}
-              </NavLink>
-            ),
-          )}
+                        <span>Courses</span>
+
+                        <svg
+                          className={`
+                            w-4
+                            h-4
+                            shrink-0
+                            transition-transform
+                            duration-200
+                            ${mobileCoursesOpen ? "rotate-180" : ""}
+                          `}
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M19 9l-7 7-7-7"
+                          />
+                        </svg>
+                      </button>
+
+                      {/* Course Submenu */}
+                      {mobileCoursesOpen && (
+                        <div
+                          className="
+                            ml-3
+                            mb-2
+                            pl-4
+                            border-l-2
+                            border-sky-100
+                            flex
+                            flex-col
+                          "
+                        >
+                          {link.subLinks.map((sub) => (
+                            <NavLink
+                              key={sub.name}
+                              to={sub.path}
+                              onClick={closeMobileMenu}
+                              className={({ isActive }) =>
+                                `
+                                  block
+                                  w-full
+                                  text-left
+                                  no-underline
+                                  px-3
+                                  py-3
+                                  text-sm
+                                  whitespace-nowrap
+                                  transition-colors
+                                  duration-200
+                                  ${
+                                    isActive
+                                      ? "text-[#00529b] font-semibold"
+                                      : "text-slate-600 font-medium hover:text-[#00529b]"
+                                  }
+                                `
+                              }
+                            >
+                              {sub.name}
+                            </NavLink>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    /* =================================================
+                       NORMAL MOBILE LINK
+                    ================================================= */
+                    <NavLink
+                      to={link.path}
+                      onClick={closeMobileMenu}
+                      className={({ isActive }) =>
+                        `
+                          block
+                          w-full
+                          text-left
+                          no-underline
+                          px-3
+                          py-3.5
+                          text-[15px]
+                          transition-colors
+                          duration-200
+                          ${
+                            isActive
+                              ? "text-[#00529b] font-semibold"
+                              : "text-[#1e293b] font-medium hover:text-[#00529b]"
+                          }
+                        `
+                      }
+                    >
+                      {link.name}
+                    </NavLink>
+                  )}
+                </div>
+              ))}
+            </div>
+          </nav>
         </div>
       )}
     </div>

@@ -72,13 +72,14 @@ export default function Footer({
   branches = [
     {
       label: "MYSORE (HQ)",
-      address: "Address line 1, 5th Block, Mysore, Karnataka 570001",
+      address:
+        "Diyan Complex, shop No.23/E 1,2nd floor, opp. KHB Complex, Kuvempu Nagara, Mysuru, Karnataka 570023",
     },
   ],
 
   phones = ["+91 97314 32324", "+91 93806 79590"],
 
-  emails = ["info@phoenixacademy.com",],
+  emails = ["info@phoenixacademy.com"],
 
   socials = ["facebook", "instagram", "twitter", "linkedin"],
 }) {
@@ -206,6 +207,8 @@ export default function Footer({
               justify-center
               rounded-full
               bg-[#9C1726]
+              border
+              border-white
               px-8
               py-3.5
               text-sm
@@ -217,7 +220,8 @@ export default function Footer({
               transition-all
               duration-300
               hover:-translate-y-0.5
-              hover:bg-[#85121f]
+              hover:bg-gray-100
+              hover:text-[#9C1726]
               hover:shadow-xl
             "
           >
@@ -319,7 +323,12 @@ export default function Footer({
                     >
                       <Icon
                         type="pin"
-                        className="h-4 w-4 flex-shrink-0 text-[#f05123]"
+                        className="
+                          h-4
+                          w-4
+                          flex-shrink-0
+                          text-[#f05123]
+                        "
                       />
 
                       <span>{branch.label}</span>
@@ -466,21 +475,49 @@ export default function Footer({
           </div>
 
           {/* =====================================================
-              COPYRIGHT
+              COPYRIGHT & DEVELOPER
           ====================================================== */}
-          <p
-            className="
-              mt-5
-              mb-0
-              text-center
-              text-[11px]
-              leading-relaxed
-              text-white/60
-            "
-          >
-            © {new Date().getFullYear()} Phoenix Institute of Aviation &
-            Hospitality. All rights reserved.
-          </p>
+          <div className="mt-5 text-center space-y-1">
+            {/* Copyright */}
+            <p
+              className="
+                m-0
+                text-[11px]
+                leading-relaxed
+                text-white/60
+              "
+            >
+              © {new Date().getFullYear()} Phoenix Institute of Aviation &
+              Hospitality. All rights reserved.
+            </p>
+
+            {/* Developed By */}
+            <p
+              className="
+                m-0
+                text-[11px]
+                leading-relaxed
+                text-white/50
+              "
+            >
+              Developed by{" "}
+              <a
+                href="https://koworks.tech"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                  text-white/70
+                  font-semibold
+                  no-underline
+                  hover:text-white
+                  transition-colors
+                  duration-200
+                "
+              >
+                Koworks
+              </a>
+            </p>
+          </div>
         </div>
       </footer>
     </div>

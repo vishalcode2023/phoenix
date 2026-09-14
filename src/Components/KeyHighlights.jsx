@@ -10,7 +10,7 @@ const courses = [
     tag: "Most enrolled",
     tagColor: "#f05123",
     tagBg: "#fff3ef",
-    href: "https://www.skill-brink.com/courses/cabin-crew",
+    href: "/courses/aviation-hospitality-travel-management",
     image:
       "https://plus.unsplash.com/premium_photo-1661746449875-2f8fb11b2251?w=800&auto=format&fit=crop&q=80",
     track: "Career Track · Professional Certification",
@@ -31,7 +31,7 @@ const courses = [
     tag: "High demand",
     tagColor: "#00529b",
     tagBg: "#eef4fb",
-    href: "#",
+    href: "/courses/airport-ground-services",
     image:
       "https://plus.unsplash.com/premium_photo-1664298927557-d751ca221bff?w=800&auto=format&fit=crop&q=80",
     track: "Career Track · Professional Certification",
@@ -186,7 +186,7 @@ export default function CourseCards() {
               key={idx}
               className={`group relative bg-white rounded-2xl border overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5 ${
                 course.featured
-                  ? "border-[#00529b]/30 shadow-md"
+                  ? "border-[#9C1726]/30 shadow-md"
                   : "border-gray-200 shadow-sm"
               }`}
             >
@@ -282,7 +282,7 @@ export default function CourseCards() {
                   </div>
                   <a
                     href={course.href}
-                    className="group/btn inline-flex items-center gap-2 bg-[#00529b] hover:bg-[#003e75] text-white text-xs font-semibold px-5 py-2.5 rounded-full transition-all duration-200 no-underline shadow-sm hover:shadow-md"
+                    className="group/btn inline-flex items-center gap-2 bg-[#9C1726]  text-white text-xs font-semibold px-5 py-2.5 rounded-full transition-all duration-200 no-underline shadow-sm hover:shadow-md"
                   >
                     Enroll now
                     <span className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center group-hover/btn:bg-white group-hover/btn:text-[#00529b] transition-all duration-200">
