@@ -1,20 +1,23 @@
 import Navbar from "../Router/Navbar";
 
 export default function HeroSection({
-  desktopVideo = "/herovideo.mp4",
-  mobileVideo = "/herovideo.mp4",
+  desktopVideo = "",
+  mobileVideo = "",
   posterImage = "/img1.png",
+  mobilePosterImage = "/img-mob.png", // ← new prop, falls back to posterImage
   tag = "MYSORE'S #1 AVIATION ACADEMY",
   headline = "Phoenix Academy, Mysore's 1st Aviation Institute",
   sub = "Pioneering cabin crew and hospitality training in Mysore with 100% placement support.",
   ctaText = "Begin Your Journey",
   ctaLink = "#",
 }) {
+  const mobPoster = mobilePosterImage || posterImage;
+
   return (
-    <div className="w-full px-2 sm:px-4  py-2">
+    <div className="w-full px-2 sm:px-4 py-2">
       <section className="relative w-full min-h-[680px] md:min-h-[705px] rounded-[32px] md:rounded-[44px] overflow-hidden shadow-sm flex items-end justify-center text-center p-6 pb-12 md:p-12 md:pb-16">
         {/* Floating Top Navbar Container */}
-        <div className="absolute -top-1 md:-top-5 left-0 w-full z-30 p-2 sm:p-4 md:p-6">
+        <div className="absolute -top-1 md:-top-10 left-0 w-full z-30 p-2 sm:p-4 md:p-6">
           <Navbar />
         </div>
 
@@ -29,16 +32,24 @@ export default function HeroSection({
           playsInline
         />
 
-        {/* Mobile Video */}
-        <video
-          className="absolute inset-0 w-full h-full object-cover block md:hidden"
-          src={mobileVideo || desktopVideo}
-          poster={posterImage}
-          autoPlay
-          loop
-          muted
-          playsInline
+        {/* Mobile: static image fallback (always rendered behind video) */}
+        <div
+          className="absolute inset-0 w-full h-full block md:hidden bg-cover bg-center"
+          style={{ backgroundImage: `url(${mobPoster})` }}
         />
+
+        {/* Mobile Video (renders on top of image, so image shows until video loads) */}
+        {(mobileVideo || desktopVideo) && (
+          <video
+            className="absolute inset-0 w-full h-full object-cover block md:hidden"
+            src={mobileVideo || desktopVideo}
+            poster={mobPoster}
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
+        )}
 
         {/* Overlay */}
         <div

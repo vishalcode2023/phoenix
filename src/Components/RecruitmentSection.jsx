@@ -1,248 +1,290 @@
 import React from "react";
 
 const recruiters = [
-  { name: "Airlines", stripe: "bg-[#00529b]" },
-  { name: "Airport Ground Ops", stripe: "bg-[#f05123]" },
-  { name: "Hotels & Resorts", stripe: "bg-slate-700" },
-  { name: "Travel Agencies", stripe: "bg-[#00529b]" },
-  { name: "Airport Lounges", stripe: "bg-[#f05123]" },
-  { name: "Customer Service Teams", stripe: "bg-slate-700" },
+  {
+    name: "Air India",
+    src: "https://imgs.search.brave.com/__EnKxFM3dexdKJHDB1Hag084SUQNVNcCveWPz0F3_w/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly8xMDAw/bG9nb3MubmV0L3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDIwLzA5/L0Fpci1JbmRpYS1M/b2dvLTUwMHgyODEu/anBn",
+  },
+  {
+    name: "IndiGo",
+    src: "https://imgs.search.brave.com/uPrh4ycImimOIRWqVLkqWjDTzZMVmZeldelyA2dc5YY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9sb2dv/d2lrLmNvbS9jb250/ZW50L3VwbG9hZHMv/aW1hZ2VzL2luZGln/bzUzMTYuanBn",
+  },
+  {
+    name: "SpiceJet",
+    src: "https://imgs.search.brave.com/7zOCB6fJIlfLdDweDU2xj3SyXEqR1Tw-mnzgANWvejQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9sb2dv/ZGl4LmNvbS9sb2dv/LzIxMzI1NjcucG5n",
+  },
+  {
+    name: "Emirates",
+    src: "https://imgs.search.brave.com/_GLM0v_kRj3ysX8rVudBKahUdCZhetzDxyGUIBA2uKo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9sb2dv/d2lrLmNvbS9jb250/ZW50L3VwbG9hZHMv/aW1hZ2VzL2VtaXJh/dGVzLWFpcmxpbmVz/MTc2OC5qcGc",
+  },
 ];
 
 const features = [
   {
-    step: "01",
     tag: "Faculty",
-    title: "Industry-informed trainers",
+    title: "Trainers who've worked the job",
     description:
-      "Instructors familiar with the practical demands of aviation, hospitality, and travel roles, keeping lessons grounded in real workplace expectations.",
+      "Instructors with real aviation and hospitality backgrounds bring workplace expectations into the classroom — drills, not theory.",
     points: [
-      "Practical, activity-based classes",
-      "Mock service drills",
-      "Real workplace scenarios",
+      "Activity-based classes, not lectures",
+      "Mock service drills each week",
+      "Real-world scenario walkthroughs",
     ],
-    stat: {
-      value: "6",
-      label: "Specialisation tracks to choose from",
-    },
-    accentColor: "from-[#00529b] to-sky-600",
-    lightBg: "bg-blue-50/80",
-    textColor: "text-[#00529b]",
-    borderColor: "hover:border-[#00529b]/40",
+    stat: { value: "6", label: "specialisation tracks" },
+    accent: "#3b82f6",
+    accentLight: "rgba(59,130,246,0.08)",
+    icon: (
+      <svg viewBox="0 0 32 32" fill="none" className="w-full h-full">
+        <circle
+          cx="16"
+          cy="10"
+          r="5"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+        />
+        <path
+          d="M6 26c0-5.523 4.477-10 10-10s10 4.477 10 10"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+        />
+      </svg>
+    ),
   },
   {
-    step: "02",
     tag: "Placement cell",
-    title: "Dedicated job assistance",
+    title: "Job support that doesn't stop at graduation",
     description:
-      "End-to-end career support including resume building, mock interviews, and guidance as placement opportunities arise.",
+      "A dedicated team works with you on resume, interviews, and leads — and stays connected as hiring cycles open up after you graduate.",
     points: [
-      "Ongoing placement support",
+      "Resume and cover letter review",
       "Mock interview coaching",
-      "Resume & cover letter help",
+      "Active placement follow-through",
     ],
-    stat: { value: "Ongoing", label: "Placement support after graduation" },
-    accentColor: "from-[#f05123] to-amber-500",
-    lightBg: "bg-orange-50/80",
-    textColor: "text-[#f05123]",
-    borderColor: "hover:border-[#f05123]/40",
+    stat: { value: "Ongoing", label: "post-graduation support" },
+    accent: "#f97316",
+    accentLight: "rgba(249,115,22,0.08)",
+    icon: (
+      <svg viewBox="0 0 32 32" fill="none" className="w-full h-full">
+        <rect
+          x="6"
+          y="10"
+          width="20"
+          height="14"
+          rx="2"
+          stroke="currentColor"
+          strokeWidth="1.8"
+        />
+        <path
+          d="M11 10V8a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+        />
+        <path
+          d="M16 15v4M14 17h4"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+        />
+      </svg>
+    ),
   },
   {
-    step: "03",
-    tag: "Career guidance",
-    title: "Support choosing your path",
+    tag: "Counselling",
+    title: "Clarity before you commit",
     description:
-      "Trained student counsellors help you compare tracks and understand potential career paths before and during your course.",
+      "Student counsellors help you compare tracks, understand career outcomes, and confirm eligibility — before you enroll, not after.",
     points: [
-      "One-on-one counselling",
-      "Course selection guidance",
-      "Clear eligibility criteria",
+      "One-on-one counselling sessions",
+      "Track comparison guidance",
+      "Eligibility walk-through",
     ],
-    stat: {
-      value: "17–24",
-      label: "Typical admission age range",
-    },
-    accentColor: "from-emerald-500 to-teal-500",
-    lightBg: "bg-emerald-50/80",
-    textColor: "text-emerald-600",
-    borderColor: "hover:border-emerald-400/40",
+    stat: { value: "18–27", label: "typical admission age" },
+    accent: "#10b981",
+    accentLight: "rgba(16,185,129,0.08)",
+    icon: (
+      <svg viewBox="0 0 32 32" fill="none" className="w-full h-full">
+        <path
+          d="M8 20s2-3 8-3 8 3 8 3"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+        />
+        <circle cx="16" cy="12" r="4" stroke="currentColor" strokeWidth="1.8" />
+        <path
+          d="M6 26h20"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+        />
+      </svg>
+    ),
   },
 ];
 
 const stats = [
   { value: "6", label: "Specialisation tracks" },
   { value: "6–11 mo", label: "Program lengths" },
-  { value: "Ongoing", label: "Placement support" },
-  { value: "17–24", label: "Admission age range" },
+  { value: "100%", label: "Placement support" },
+  { value: "18–27", label: "Admission age range" },
 ];
+
+function ArrowRight() {
+  return (
+    <svg viewBox="0 0 20 20" fill="none" className="w-4 h-4">
+      <path
+        d="M4 10h12M10 4l6 6-6 6"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function CheckMark({ color }) {
+  return (
+    <svg viewBox="0 0 16 16" fill="none" className="w-3.5 h-3.5 shrink-0">
+      <path
+        d="M3 8l3.5 3.5L13 5"
+        stroke={color}
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
 
 function LogoChip({ item }) {
   return (
-    <div className="flex-shrink-0 w-60 md:w-72 flex items-center gap-4 md:gap-5 bg-white rounded-2xl pl-5 pr-6 py-5 md:py-6 border border-slate-200/80 shadow-[0_6px_20px_rgba(0,0,0,0.04)] mx-3 md:mx-4">
-      <span
-        className={`w-2 h-12 md:h-14 rounded-full flex-shrink-0 items-center ${item.stripe}`}
+    <div className="shrink-0 flex items-center justify-center mx-3 px-8 rounded-xl border border-gray-200 bg-white shadow-sm ">
+      <img
+        src={item.src}
+        alt={item.name}
+        className="h-[100px] w-auto object-contain  transition-all duration-300"
       />
-      <span
-        className="text-slate-700 font-semibold text-lg md:text-xl whitespace-nowrap"
-        style={{ fontFamily: '"Space Grotesk", sans-serif' }}
-      >
-        {item.name}
-      </span>
     </div>
   );
 }
 
 export default function RecruitmentSection() {
-  const loopedRecruiters = [...recruiters, ...recruiters];
+  const looped = [...recruiters, ...recruiters, ...recruiters];
 
   return (
-    <section className="relative w-full pt-14 md:pt-16 bg-[#f6f8fa] overflow-hidden">
+    <section
+      className="relative w-full overflow-hidden bg-white"
+      style={{ fontFamily: '"Inter", sans-serif' }}
+    >
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
-        @keyframes marquee-scroll {
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+        @keyframes marquee {
           from { transform: translateX(0); }
-          to { transform: translateX(-50%); }
+          to   { transform: translateX(-33.333%); }
         }
-        .marquee-track { animation: marquee-scroll 32s linear infinite; }
-        .marquee-track:hover { animation-play-state: paused; }
+        .marquee-run { animation: marquee 30s linear infinite; }
+        .marquee-run:hover { animation-play-state: paused; }
       `}</style>
 
-      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-gradient-to-r from-blue-200/20 via-orange-200/20 to-sky-200/20 blur-3xl rounded-full pointer-events-none" />
-
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 md:px-12 z-10">
-        <div className="text-center max-w-2xl mx-auto mb-10 md:mb-12">
-          <div className="inline-flex items-center gap-2 mb-4 text-[#f05123]">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#f05123] animate-pulse" />
-            <span
-              className="text-sm font-medium"
-              style={{ fontFamily: '"Inter", sans-serif' }}
-            >
+      {/* ── Header ── */}
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 md:px-10 pt-16 md:pt-20 pb-12 md:pb-14">
+        <div className="max-w-2xl">
+          <div className="flex items-center gap-2 mb-5">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#f97316]" />
+            <span className="text-sm font-medium text-[#f97316]">
               Career launchpad
             </span>
           </div>
           <h2
-            className="text-4xl sm:text-5xl md:text-6xl font-semibold text-slate-900 tracking-tight leading-[1.05] mb-4"
+            className="text-4xl sm:text-5xl md:text-[3.2rem] font-semibold text-gray-900 leading-[1.08] tracking-tight mb-5"
+            style={{ fontFamily: '"Space Grotesk", sans-serif' }}
           >
-            Where our students get <span className="text-4xl sm:text-5xl md:text-6xl font-semibold text-[#00529b] tracking-tight">hired</span> 
+            Where our graduates get hired
           </h2>
-          <p
-            className="text-slate-500 text-base leading-relaxed"
-            style={{ fontFamily: '"Inter", sans-serif' }}
-          >
-            Leading international airlines and airport operators actively
-            recruit from our graduating batches.
+          <p className="text-gray-500 text-base leading-relaxed max-w-lg">
+            Airlines, airports, and hospitality groups actively recruit from our
+            batches — because we train for the job, not just the certificate.
           </p>
         </div>
       </div>
 
-      {/* Full-bleed recruiter marquee */}
-      <div className="relative mb-12 md:mb-16">
-        <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-[#f6f8fa] to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-[#f6f8fa] to-transparent z-10 pointer-events-none" />
-        <div className="flex w-max marquee-track py-4">
-          {loopedRecruiters.map((item, idx) => (
-            <LogoChip item={item} key={idx} />
+      {/* ── Logo marquee ── */}
+      <div className="relative mb-14 md:mb-16">
+        <div className="absolute inset-y-0 left-0 w-24 z-10 pointer-events-none bg-gradient-to-r from-white to-transparent" />
+        <div className="absolute inset-y-0 right-0 w-24 z-10 pointer-events-none bg-gradient-to-l from-white to-transparent" />
+        <div className="flex w-max items-center marquee-run">
+          {looped.map((item, i) => (
+            <LogoChip key={i} item={item} />
           ))}
         </div>
       </div>
 
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 md:px-12 z-10">
-        {/* Feature cards — three across, no dead gutters */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-6">
-          {features.map((item, idx) => (
+      {/* ── Feature cards ── */}
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 md:px-10 pb-4">
+        <div className="flex flex-col gap-4">
+          {features.map((f, idx) => (
             <div
               key={idx}
-              className={`group relative bg-white rounded-[28px] p-6 md:p-7 border border-slate-200/80 shadow-[0_10px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-500 flex flex-col overflow-hidden ${item.borderColor}`}
-              style={{ fontFamily: '"Inter", sans-serif' }}
+              className="group relative rounded-2xl overflow-hidden border border-gray-200 bg-white hover:border-gray-300 hover:shadow-md transition-all duration-300"
             >
               <div
-                className={`absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r ${item.accentColor}`}
+                className="absolute left-0 top-0 bottom-0 w-1 rounded-l-2xl group-hover:w-1.5 transition-all duration-300"
+                style={{ background: f.accent }}
               />
-
-              <div className="flex items-center justify-between mb-4">
-                <span
-                  className={`text-xs font-semibold px-3.5 py-1.5 rounded-full ${item.lightBg} ${item.textColor}`}
-                >
-                  {item.tag}
-                </span>
-                <span
-                  className="text-2xl font-semibold text-slate-200 group-hover:text-slate-300 transition-colors"
-                  style={{ fontFamily: '"Space Grotesk", sans-serif' }}
-                >
-                  {item.step}
-                </span>
-              </div>
-
-              <h3
-                className="text-xl md:text-[1.35rem] font-semibold text-slate-900 mb-2.5 group-hover:text-[#00529b] transition-colors leading-tight"
-                style={{ fontFamily: '"Space Grotesk", sans-serif' }}
-              >
-                {item.title}
-              </h3>
-              <p className="text-slate-500 text-sm leading-relaxed mb-5">
-                {item.description}
-              </p>
-
-              <div className="space-y-2.5 pb-5 mb-5 border-b border-dashed border-slate-200">
-                {item.points.map((pt, pIdx) => (
-                  <div
-                    key={pIdx}
-                    className="flex items-center gap-3 text-sm font-medium text-slate-700"
-                  >
-                    <div
-                      className={`w-5 h-5 rounded-full ${item.lightBg} flex items-center justify-center flex-shrink-0`}
-                    >
-                      <svg
-                        className={`w-3 h-3 ${item.textColor}`}
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="3"
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                    </div>
-                    <span>{pt}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div
-                className={`flex items-center gap-3.5 rounded-2xl ${item.lightBg} px-4 py-3.5 mb-5`}
-              >
-                <span
-                  className={`text-2xl font-semibold ${item.textColor} whitespace-nowrap`}
-                  style={{ fontFamily: '"Space Grotesk", sans-serif' }}
-                >
-                  {item.stat.value}
-                </span>
-                <span className="text-xs font-medium text-slate-600 leading-snug">
-                  {item.stat.label}
-                </span>
-              </div>
-
-              <div className="mt-auto flex items-center justify-between text-sm font-semibold text-slate-900">
-                <span>Discover opportunity</span>
+              <div className="pl-8 pr-6 py-6 md:py-7 grid md:grid-cols-[auto_1fr_auto] gap-6 md:gap-10 items-center">
                 <div
-                  className={`w-9 h-9 rounded-full ${item.lightBg} flex items-center justify-center group-hover:translate-x-1.5 transition-transform duration-300`}
+                  className="hidden md:flex w-14 h-14 rounded-xl items-center justify-center shrink-0"
+                  style={{ background: f.accentLight, color: f.accent }}
                 >
-                  <svg
-                    className={`w-4 h-4 ${item.textColor}`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2.5"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    />
-                  </svg>
+                  {f.icon}
+                </div>
+                <div className="flex flex-col md:flex-row md:items-center gap-5 md:gap-10 flex-1">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2.5 mb-2">
+                      <span
+                        className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full"
+                        style={{ background: f.accentLight, color: f.accent }}
+                      >
+                        {f.tag}
+                      </span>
+                    </div>
+                    <h3
+                      className="text-lg md:text-xl font-semibold text-gray-900 mb-1.5 leading-snug"
+                      style={{ fontFamily: '"Space Grotesk", sans-serif' }}
+                    >
+                      {f.title}
+                    </h3>
+                    <p className="text-gray-500 text-sm leading-relaxed max-w-md">
+                      {f.description}
+                    </p>
+                  </div>
+                  <div className="flex flex-col gap-2 md:min-w-[220px]">
+                    {f.points.map((pt, pi) => (
+                      <div key={pi} className="flex items-center gap-2.5">
+                        <CheckMark color={f.accent} />
+                        <span className="text-sm text-gray-600">{pt}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="flex md:flex-col items-center md:items-end gap-4 md:gap-2 shrink-0">
+                  <div className="text-right">
+                    <div
+                      className="text-2xl md:text-3xl font-semibold"
+                      style={{
+                        color: f.accent,
+                        fontFamily: '"Space Grotesk", sans-serif',
+                      }}
+                    >
+                      {f.stat.value}
+                    </div>
+                    <div className="text-xs text-gray-400 mt-0.5 leading-snug md:text-right">
+                      {f.stat.label}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -250,26 +292,26 @@ export default function RecruitmentSection() {
         </div>
       </div>
 
-      {/* Stats band, pulled closer to the cards above it */}
-      <div className="relative mt-12 md:mt-14 bg-[#062a4a]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-12 py-9 md:py-11 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6">
-          {stats.map((s, idx) => (
+      {/* ── Stats band ── */}
+      <div className="relative mt-12 md:mt-14 border-t border-gray-200 bg-[#f6f8fa]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 py-10 md:py-12 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0">
+          {stats.map((s, i) => (
             <div
-              key={idx}
-              className={`text-center md:text-left ${idx > 0 ? "md:border-l md:border-white/10 md:pl-6" : ""}`}
+              key={i}
+              className="md:text-center"
+              style={
+                i > 0
+                  ? { borderLeft: "1px solid #e5e7eb", paddingLeft: "2rem" }
+                  : {}
+              }
             >
               <div
-                className="text-3xl md:text-4xl font-semibold text-white tracking-tight"
+                className="text-3xl md:text-4xl font-semibold text-gray-900"
                 style={{ fontFamily: '"Space Grotesk", sans-serif' }}
               >
                 {s.value}
               </div>
-              <div
-                className="mt-1 text-xs md:text-sm text-slate-300"
-                style={{ fontFamily: '"Inter", sans-serif' }}
-              >
-                {s.label}
-              </div>
+              <div className="mt-1 text-xs text-gray-400">{s.label}</div>
             </div>
           ))}
         </div>

@@ -3,48 +3,52 @@ import { useState } from "react";
 const courses = [
   {
     code: "AHT · 01",
-    title: "Aviation, Hospitality and Travel Management",
-    duration: "11 months",
+    title: "Aviation Cabin Crew Training",
+    duration: "6 Months",
+    certification: "AASSC Certified",
     seats: "Batches forming",
-    description:
-      "Cabin crew procedures, hospitality operations, and travel ticketing in one well-rounded program.",
-    image:
-      "https://plus.unsplash.com/premium_photo-1661746449875-2f8fb11b2251?w=800&auto=format&fit=crop&q=80&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Q2FiaW4lMjBDcmV3JTIwVHJhaW5pbmd8ZW58MHx8MHx8fDA%3D",
     tag: "Most enrolled",
-    tagBg: "bg-orange-50 text-[#f05123] border-orange-200/60",
+    tagColor: "#f05123",
+    tagBg: "#fff3ef",
+    href: "https://www.skill-brink.com/courses/cabin-crew",
+    image:
+      "https://plus.unsplash.com/premium_photo-1661746449875-2f8fb11b2251?w=800&auto=format&fit=crop&q=80",
+    track: "Career Track · Professional Certification",
+    modules: [
+      "Basics of Aviation & Aircraft Types",
+      "Passenger Service & Hospitality",
+      "Dangerous Goods",
+      "Safety & Emergency Procedures",
+    ],
   },
   {
     code: "AGS · 02",
-    title: "Airport Ground Services",
-    duration: "11 months",
+    title: "Aviation Ground Operations",
+    duration: "11 Months",
+    certification: "AASSC Certified",
     seats: "Batches forming",
     featured: true,
-    description:
-      "Check-in operations, ramp procedures, baggage handling, and airport safety fundamentals.",
-    image:
-      "https://plus.unsplash.com/premium_photo-1664298927557-d751ca221bff?w=800&auto=format&fit=crop&q=80&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fEdyb3VuZCUyMEhhbmRsaW5nfGVufDB8fDB8fHww",
     tag: "High demand",
-    tagBg: "bg-blue-50 text-[#00529b] border-blue-200/60",
-  },
-  {
-    code: "HM · 03",
-    title: "Hospitality Management",
-    duration: "6 months",
-    seats: "Batches forming",
-    description:
-      "Front-office operations, guest relations, and reservation systems for hotel careers.",
+    tagColor: "#00529b",
+    tagBg: "#eef4fb",
+    href: "#",
     image:
-      "https://images.unsplash.com/photo-1485310818226-f01c4269687f?w=800&auto=format&fit=crop&q=80&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fEF2aWF0aW9uJTIwTWFuYWdlbWVudHxlbnwwfHwwfHx8MA%3D%3D",
-    tag: "Fastest track",
-    tagBg: "bg-emerald-50 text-emerald-600 border-emerald-200/60",
+      "https://plus.unsplash.com/premium_photo-1664298927557-d751ca221bff?w=800&auto=format&fit=crop&q=80",
+    track: "Career Track · Professional Certification",
+    modules: [
+      "Ramp Operations",
+      "Baggage & Cargo Handling",
+      "Marshalling",
+      "Safety Compliance",
+    ],
   },
 ];
 
 const stats = [
-  { value: "6", label: "specialisation tracks" },
-  { value: "6–11 mo", label: "structured program lengths" },
-  { value: "Ongoing", label: "placement support" },
-  { value: "17–24", label: "typical admission age" },
+  { value: "6", label: "Specialisation tracks" },
+  { value: "6–11 mo", label: "Program lengths" },
+  { value: "100%", label: "Placement support" },
+  { value: "17–24", label: "Admission age" },
 ];
 
 const careerAreas = [
@@ -98,11 +102,25 @@ function ArrowIcon({ className }) {
   );
 }
 
-function SeatIcon({ className }) {
+function CheckIcon({ className }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className}>
       <path
-        d="M6 12V6a2 2 0 0 1 2-2h1.5M6 12h12M6 12l-1.5 6M18 12V6a2 2 0 0 0-2-2h-1.5M18 12l1.5 6"
+        d="M5 13l4 4L19 7"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function BadgeIcon({ className }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className}>
+      <path
+        d="M12 2l2.4 4.8 5.6.8-4 3.9.9 5.5L12 14.5l-4.9 2.5.9-5.5-4-3.9 5.6-.8z"
         stroke="currentColor"
         strokeWidth="1.4"
         strokeLinecap="round"
@@ -114,165 +132,168 @@ function SeatIcon({ className }) {
 
 export default function CourseCards() {
   return (
-    <section className="relative w-full py-14 md:py-20 px-4 sm:px-6 md:px-12 bg-[#f6f8fa] flex flex-col items-center overflow-hidden">
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');`}</style>
+    <section
+      className="relative w-full bg-white"
+      style={{ fontFamily: '"Inter", sans-serif' }}
+    >
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');`}</style>
 
-      <div className="absolute top-0 right-0 w-[32rem] h-[32rem] bg-[#00529b]/[0.06] rounded-full blur-3xl pointer-events-none -translate-y-1/3" />
-      <div className="absolute bottom-0 left-0 w-[24rem] h-[24rem] bg-[#f05123]/[0.04] rounded-full blur-3xl pointer-events-none translate-y-1/3" />
-
-      {/* Header + stats side by side on desktop, so the top band isn't just a headline floating in space */}
-      <div className="relative z-10 w-full max-w-6xl grid md:grid-cols-[1.1fr_1fr] gap-10 md:gap-8 items-end mb-12 md:mb-16">
-        <div>
-          <div className="inline-flex items-center gap-2 mb-4 text-[#00529b]">
-            <PlaneIcon className="w-4 h-4" />
-            <span
-              className="text-sm font-medium"
-              style={{ fontFamily: '"Inter", sans-serif' }}
+      {/* ── Top band ── */}
+      <div className="w-full bg-[#FFFFFF] border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 py-10 md:py-12 grid md:grid-cols-[1fr_auto] gap-8 items-center">
+          <div>
+            <div className="flex items-center gap-2 mb-3 text-[#00529b]">
+              <PlaneIcon className="w-4 h-4" />
+              <span className="text-xs font-semibold tracking-wide text-[#00529b] uppercase">
+                Multiple tracks into the industry
+              </span>
+            </div>
+            <h2
+              className="text-3xl sm:text-4xl md:text-[2.6rem] font-semibold text-gray-900 tracking-tight leading-[1.1] max-w-xl"
+              style={{ fontFamily: '"Space Grotesk", sans-serif' }}
             >
-              Multiple tracks into the industry
-            </span>
+              Structured courses across aviation, hospitality & travel
+            </h2>
+            <p className="mt-3 text-gray-500 text-sm leading-relaxed max-w-md">
+              Practical, activity-based training with dedicated interview and
+              placement support built into every course.
+            </p>
           </div>
-          <h2
-            className="text-4xl sm:text-5xl md:text-[3.4rem] font-semibold text-gray-900 tracking-tight  leading-[1.05]"
-            style={{ fontFamily: '"Space Grotesk", sans-serif' }}
-          >
-            Structured courses across aviation, hospitality & travel
-          </h2>
-          <p
-            className="mt-4 text-gray-500 text-base leading-relaxed max-w-md"
-            style={{ fontFamily: '"Inter", sans-serif' }}
-          >
-            Practical, activity-based training with dedicated interview and
-            placement support built into every course.
-          </p>
-        </div>
 
-        <div
-          className="grid grid-cols-2 gap-x-6 gap-y-6 md:border-l md:border-gray-200 md:pl-8"
-          style={{ fontFamily: '"Inter", sans-serif' }}
-        >
-          {stats.map((s, i) => (
-            <div key={i}>
-              <div
-                className="text-2xl md:text-3xl font-semibold text-gray-900"
-                style={{ fontFamily: '"Space Grotesk", sans-serif' }}
-              >
-                {s.value}
+          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-2 gap-x-8 gap-y-5 md:border-l md:border-gray-200 md:pl-10">
+            {stats.map((s, i) => (
+              <div key={i} className="min-w-[90px]">
+                <div
+                  className="text-2xl font-semibold text-gray-900"
+                  style={{ fontFamily: '"Space Grotesk", sans-serif' }}
+                >
+                  {s.value}
+                </div>
+                <div className="text-xs text-gray-500 mt-0.5 leading-snug">
+                  {s.label}
+                </div>
               </div>
-              <div className="text-sm text-gray-500 mt-1 leading-snug">
-                {s.label}
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ── Cards — 2-up, landscape layout ── */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 py-8 md:py-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {courses.map((course, idx) => (
+            <div
+              key={idx}
+              className={`group relative bg-white rounded-2xl border overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5 ${
+                course.featured
+                  ? "border-[#00529b]/30 shadow-md"
+                  : "border-gray-200 shadow-sm"
+              }`}
+            >
+              {/* Featured ribbon */}
+              {course.featured && (
+                <div className="absolute top-4 right-4 z-20 flex items-center gap-1.5 bg-[#00529b] text-white text-[10px] font-semibold px-2.5 py-1 rounded-full shadow-sm">
+                  <PlaneIcon className="w-3 h-3" />
+                  Featured
+                </div>
+              )}
+
+              {/* Top: image strip — landscape, not square */}
+              <div className="relative w-full overflow-hidden">
+                <img
+                  src={course.image}
+                  alt={course.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                {/* Dark gradient only at bottom */}
+                <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/70" />
+
+                {/* Course code top-left */}
+                <span className="absolute top-4 left-4 font-mono text-[10px] tracking-widest text-white/70 bg-black/30 backdrop-blur-sm px-2 py-1 rounded-md">
+                  {course.code}
+                </span>
+
+                {/* Title + cert badge bottom of image */}
+                <div className="absolute bottom-0 left-0 right-0 p-4 flex items-end justify-between gap-3">
+                  <h3
+                    className="text-white text-xl font-semibold leading-tight drop-shadow"
+                    style={{ fontFamily: '"Space Grotesk", sans-serif' }}
+                  >
+                    {course.title}
+                  </h3>
+                  <span className="shrink-0 flex items-center gap-1 bg-white/95 text-[#00529b] text-[10px] font-semibold px-2 py-1 rounded-md whitespace-nowrap">
+                    <BadgeIcon className="w-3 h-3" />
+                    {course.certification}
+                  </span>
+                </div>
+              </div>
+
+              {/* Body */}
+              <div className="p-5 flex flex-col gap-4">
+                {/* Tag + duration */}
+                <div className="flex items-center gap-3">
+                  <span
+                    className="text-[11px] font-semibold px-2.5 py-1 rounded-full"
+                    style={{ color: course.tagColor, background: course.tagBg }}
+                  >
+                    {course.tag}
+                  </span>
+                  <span className="flex items-center gap-1 text-xs text-gray-400 font-medium">
+                    <ClockIcon className="w-3.5 h-3.5" />
+                    {course.duration}
+                  </span>
+                  <span className="ml-auto text-[11px] text-gray-400 font-medium">
+                    {course.track}
+                  </span>
+                </div>
+
+                {/* Divider */}
+                <div className="border-t border-dashed border-gray-200" />
+
+                {/* Curriculum modules */}
+                <div>
+                  <p className="text-[10px] uppercase tracking-widest text-gray-400 font-semibold mb-2.5">
+                    What you'll learn
+                  </p>
+                  <div className="grid grid-cols-2 gap-x-4 gap-y-2">
+                    {course.modules.map((m, i) => (
+                      <div key={i} className="flex items-start gap-2">
+                        <span className="mt-0.5 shrink-0 w-4 h-4 rounded-full bg-[#00529b]/[0.1] flex items-center justify-center text-[#00529b]">
+                          <CheckIcon className="w-2.5 h-2.5" />
+                        </span>
+                        <span className="text-xs text-gray-600 leading-snug">
+                          {m}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Divider */}
+                <div className="border-t border-dashed border-gray-200" />
+
+                {/* CTA row */}
+                <div className="flex items-center justify-between gap-3">
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#f05123] animate-pulse" />
+                    <span className="text-xs font-medium text-[#f05123]">
+                      {course.seats}
+                    </span>
+                  </div>
+                  <a
+                    href={course.href}
+                    className="group/btn inline-flex items-center gap-2 bg-[#00529b] hover:bg-[#003e75] text-white text-xs font-semibold px-5 py-2.5 rounded-full transition-all duration-200 no-underline shadow-sm hover:shadow-md"
+                  >
+                    Enroll now
+                    <span className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center group-hover/btn:bg-white group-hover/btn:text-[#00529b] transition-all duration-200">
+                      <ArrowIcon className="w-3 h-3" />
+                    </span>
+                  </a>
+                </div>
               </div>
             </div>
           ))}
         </div>
-      </div>
-
-      {/* Cards */}
-      <div className="relative w-full max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch z-10">
-        {courses.map((course, idx) => (
-          <div
-            key={idx}
-            className={`group bg-white rounded-[28px] shadow-md hover:shadow-xl border ${
-              course.featured ? "border-[#00529b]/25" : "border-gray-100"
-            } flex flex-col overflow-hidden transition-shadow duration-300 cursor-pointer`}
-            style={{ fontFamily: '"Inter", sans-serif' }}
-          >
-            <div className="relative w-full aspect-[4/2.6] overflow-hidden">
-              <img
-                src={course.image}
-                alt={course.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/5 to-black/0" />
-              {course.featured && (
-                <span className="absolute top-4 left-4 flex items-center gap-1.5 bg-white/90 backdrop-blur text-[#00529b] text-[11px] font-semibold px-3 py-1 rounded-full">
-                  <PlaneIcon className="w-3 h-3" />
-                  Most enrolled
-                </span>
-              )}
-              <span
-                className="absolute bottom-4 left-4 text-white font-semibold text-lg leading-tight drop-shadow-sm"
-                style={{ fontFamily: '"Space Grotesk", sans-serif' }}
-              >
-                {course.title}
-              </span>
-            </div>
-
-            <div className="relative">
-              <span className="absolute -top-3 -left-3 w-6 h-6 rounded-full bg-[#f6f8fa] border border-gray-100" />
-              <span className="absolute -top-3 -right-3 w-6 h-6 rounded-full bg-[#f6f8fa] border border-gray-100" />
-              <div className="border-t-2 border-dashed border-gray-200 mx-5" />
-            </div>
-
-            <div className="flex-1 flex flex-col justify-between p-5 pt-4">
-              <div>
-                <div className="flex items-center justify-between gap-2 mb-3">
-                  <span
-                    className={`text-[11px] font-semibold px-3 py-1 rounded-full border ${course.tagBg}`}
-                  >
-                    {course.tag}
-                  </span>
-                  <span className="flex items-center gap-1 text-xs font-medium text-gray-400">
-                    <ClockIcon className="w-3.5 h-3.5" />
-                    {course.duration}
-                  </span>
-                </div>
-                <p className="text-gray-500 text-sm leading-relaxed">
-                  {course.description}
-                </p>
-              </div>
-
-              <div className="mt-5 pt-4 border-t border-dashed border-gray-200">
-                <div className="flex items-center justify-between">
-                  <span className="font-mono text-[11px] tracking-wider text-gray-400">
-                    {course.code}
-                  </span>
-                  <span className="w-9 h-9 rounded-full bg-[#00529b]/[0.08] flex items-center justify-center text-[#00529b] group-hover:bg-[#00529b] group-hover:text-white transition-colors duration-300">
-                    <ArrowIcon className="w-4 h-4" />
-                  </span>
-                </div>
-                <div className="flex items-center gap-1.5 mt-3 text-xs font-medium text-[#f05123]">
-                  <SeatIcon className="w-3.5 h-3.5" />
-                  {course.seats}
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Trust row + CTA share one band instead of leaving a gap below the cards */}
-      <div className="relative z-10 w-full max-w-6xl mt-14 md:mt-16 pt-10 border-t border-gray-200 flex flex-col md:flex-row items-center justify-between gap-8">
-        <div className="text-center md:text-left">
-          <p
-            className="text-xs uppercase tracking-wide text-gray-400 mb-3"
-            style={{ fontFamily: '"Inter", sans-serif' }}
-          >
-            Career paths our courses prepare you for
-          </p>
-          <div className="flex flex-wrap justify-center md:justify-start gap-x-5 gap-y-2">
-            {careerAreas.map((name, i) => (
-              <span
-                key={i}
-                className="text-gray-400 font-medium text-sm"
-                style={{ fontFamily: '"Space Grotesk", sans-serif' }}
-              >
-                {name}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <a
-          href="#courses"
-          className="group inline-flex items-center gap-3 bg-[#00529b] hover:bg-[#003e75] text-white font-semibold text-base px-9 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 no-underline shrink-0"
-          style={{ fontFamily: '"Inter", sans-serif' }}
-        >
-          <span>Explore all courses</span>
-          <span className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-[#00529b] transition-all duration-300">
-            <ArrowIcon className="w-4 h-4" />
-          </span>
-        </a>
       </div>
     </section>
   );

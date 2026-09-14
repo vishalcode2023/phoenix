@@ -3,163 +3,214 @@ import { ArrowUpRight } from "lucide-react";
 
 const destinations = [
   {
-    country: "India",
-    detail:
-      "Professional Cabin Crew training with airline grooming, communication, safety and customer-service skills.",
-    student: "Placed: Ananya Sharma",
-    img: "https://images.unsplash.com/photo-1542296332-2e4473faf563?q=80&w=800&auto=format&fit=crop",
-    stripe: "bg-[#00529b]",
+    city: "Mysore",
+    role: "Cabin Crew",
+    airline: "Air India",
+    student: "Ananya Sharma",
+    batch: "Batch 2024",
+    img: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=800&auto=format&fit=crop",
+    accent: "#00529b",
   },
   {
-    country: "Bengaluru",
-    detail:
-      "Industry-focused training with interview preparation, personality development and airline recruitment guidance.",
-    student: "Placed: Priya Reddy",
-    img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=800&auto=format&fit=crop",
-    stripe: "bg-[#f05123]",
+    city: "Bengaluru",
+    role: "Ground Staff",
+    airline: "IndiGo",
+    student: "Priya Reddy",
+    batch: "Batch 2024",
+    img: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=800&auto=format&fit=crop",
+    accent: "#f05123",
   },
   {
-    country: "Mumbai",
-    detail:
-      "Cabin Crew preparation covering in-flight service, emergency procedures, aviation etiquette and grooming.",
-    student: "Placed: Rohan Kumar",
-    img: "https://images.unsplash.com/photo-1569154941061-e231b4725ef1?q=80&w=800&auto=format&fit=crop",
-    stripe: "bg-[#00529b]",
+    city: "Mumbai",
+    role: "Cabin Crew",
+    airline: "SpiceJet",
+    student: "Rohan Kumar",
+    batch: "Batch 2023",
+    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
+    accent: "#00529b",
   },
   {
-    country: "Delhi",
-    detail:
-      "Complete airline career preparation with English communication, soft skills and cabin crew interview training.",
-    student: "Placed: Sneha Patel",
-    img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=800&auto=format&fit=crop",
-    stripe: "bg-[#f05123]",
+    city: "Delhi",
+    role: "Airport Lounge",
+    airline: "Vistara",
+    student: "Sneha Patel",
+    batch: "Batch 2024",
+    img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop",
+    accent: "#f05123",
   },
   {
-    country: "Hyderabad",
-    detail:
-      "Practical aviation hospitality training designed to prepare students for domestic and international airlines.",
-    student: "Placed: Rahul Nair",
-    img: "https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?q=80&w=800&auto=format&fit=crop",
-    stripe: "bg-[#00529b]",
+    city: "Hyderabad",
+    role: "Ground Ops",
+    airline: "Air Arabia",
+    student: "Rahul Nair",
+    batch: "Batch 2023",
+    img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
+    accent: "#00529b",
   },
   {
-    country: "Chennai",
-    detail:
-      "Airline-ready cabin crew training with professional grooming, passenger handling and hospitality skills.",
-    student: "Placed: Kavya Iyer",
-    img: "https://images.unsplash.com/photo-1559060017-445e8b7f7f18?q=80&w=800&auto=format&fit=crop",
-    stripe: "bg-[#f05123]",
+    city: "Chennai",
+    role: "Cabin Crew",
+    airline: "Emirates",
+    student: "Kavya Iyer",
+    batch: "Batch 2024",
+    img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=800&auto=format&fit=crop",
+    accent: "#f05123",
   },
 ];
 
+function StarIcon() {
+  return (
+    <svg viewBox="0 0 12 12" fill="currentColor" className="w-2.5 h-2.5">
+      <path d="M6 0l1.5 4H12l-3.5 2.5 1.5 4L6 8 2 10.5l1.5-4L0 4h4.5z" />
+    </svg>
+  );
+}
+
 export default function StudentShowcase() {
-  const trackRef = useRef(null);
   const looped = [...destinations, ...destinations];
 
   return (
-    <section className="relative w-full py-20 md:py-28 bg-[#f6f8fa] overflow-hidden">
+    <section
+      className="relative w-full bg-white overflow-hidden"
+      style={{ fontFamily: '"Inter", sans-serif' }}
+    >
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
         @keyframes marquee-left {
           from { transform: translateX(0); }
           to { transform: translateX(-50%); }
         }
-        .marquee-track {
-          animation: marquee-left 42s linear infinite;
-        }
-        .marquee-wrap:hover .marquee-track {
-          animation-play-state: paused;
-        }
+        .sb-track { animation: marquee-left 48s linear infinite; }
+        .sb-wrap:hover .sb-track { animation-play-state: paused; }
         @media (prefers-reduced-motion: reduce) {
-          .marquee-track { animation: none; }
+          .sb-track { animation: none; }
         }
       `}</style>
 
-      {/* Ambient background glow matching previous sections */}
-      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-gradient-to-r from-blue-200/20 via-orange-200/20 to-sky-200/20 blur-3xl rounded-full pointer-events-none" />
+      {/* ── Header — tight, full-width, border-boxed ── */}
+      <div className="border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 py-8 md:py-10">
 
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 md:px-12 z-10">
-        {/* Header Section */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14 md:mb-18">
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 mb-4 text-[#f05123]">
-              <span className="w-2 h-2 rounded-full bg-[#f05123] animate-pulse" />
-              <span
-                className="text-xs font-bold tracking-widest uppercase"
-                style={{ fontFamily: '"Inter", sans-serif' }}
-              >
-                Global Flight Bases
-              </span>
+          {/* Top micro-row */}
+          <div className="flex items-center justify-between mb-5">
+            <div className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#f05123]" />
+              <span className="text-sm font-medium text-[#f05123]">Student placements</span>
             </div>
-            <h2
-              className="text-4xl sm:text-5xl md:text-6xl font-semibold text-slate-900 tracking-tight leading-[1.05]"
-              style={{ fontFamily: '"Space Grotesk", sans-serif' }}
+            <a
+              href="#placements"
+              className="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold text-[#00529b] hover:underline no-underline"
             >
-              Where our cadets earn their{" "}
-              <span className="text-[#00529b]">wings</span>
-            </h2>
+              View all placements
+              <ArrowUpRight className="w-3.5 h-3.5" />
+            </a>
           </div>
 
-          <p
-            className="text-slate-500 text-sm md:text-base leading-relaxed max-w-md pb-1"
-            style={{ fontFamily: '"Inter", sans-serif' }}
-          >
-            DGCA-recognised flight schools across six countries, chosen for
-            approval speed, weather windows, and cost per flying hour.
-          </p>
+          {/* Headline + description + stats — all in one band */}
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 items-end">
+            <div>
+              <h2
+                className="text-4xl sm:text-5xl font-semibold text-gray-900 tracking-tight leading-[1.08] mb-3"
+                style={{ fontFamily: '"Space Grotesk", sans-serif' }}
+              >
+                Real students, real careers
+              </h2>
+              <p className="text-gray-500 text-sm leading-relaxed max-w-lg">
+                Every card is a graduate now working in aviation or hospitality — trained here in Mysore.
+              </p>
+            </div>
+
+            {/* Stats inline with header */}
+            <div className="flex items-center gap-6 md:gap-8 md:border-l md:border-gray-200 md:pl-8">
+              {[
+                { value: "200+", label: "Placed" },
+                { value: "40+", label: "Recruiters" },
+                { value: "100%", label: "Support" },
+              ].map((s, i) => (
+                <div key={i} className="text-center">
+                  <div
+                    className="text-2xl font-semibold text-gray-900"
+                    style={{ fontFamily: '"Space Grotesk", sans-serif' }}
+                  >
+                    {s.value}
+                  </div>
+                  <div className="text-xs text-gray-400 mt-0.5">{s.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Full-bleed Marquee Showcase */}
-      <div className="marquee-wrap relative">
-       
-        <div
-          ref={trackRef}
-          className="marquee-track flex gap-6 md:gap-8 w-max px-4 sm:px-6 md:px-12 py-4"
-        >
+      {/* ── Marquee — sits flush below the header border ── */}
+      <div className="sb-wrap relative py-8 md:py-10">
+        
+
+        <div className="sb-track flex gap-5 w-max px-4">
           {looped.map((d, i) => (
             <div
               key={i}
-              className="group relative flex-none w-72 sm:w-80 h-[430px] rounded-[32px] overflow-hidden border border-slate-200/80 shadow-[0_10px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)] transition-all duration-500 hover:-translate-y-2 bg-cover bg-center"
-              style={{
-                backgroundImage: `url(${d.img})`,
-                fontFamily: '"Inter", sans-serif',
-              }}
+              className="group relative flex-none w-[260px] sm:w-[280px] rounded-2xl overflow-hidden cursor-pointer"
+              style={{ height: "380px" }}
             >
-              {/* Gradient Dark Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-slate-950/10 transition-opacity duration-300 group-hover:opacity-90" />
+              <img
+                src={d.img}
+                alt={d.student}
+                className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/5" />
 
-              {/* Student Placement Badge */}
-              <div className="absolute top-5 left-5 right-5 flex items-center justify-between">
-                <span className="inline-flex items-center gap-2 text-xs font-semibold text-slate-900 bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/60 shadow-sm">
-                  <span className={`w-1.5 h-1.5 rounded-full ${d.stripe}`} />
-                  {d.student}
+              {/* Top badges */}
+              <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
+                <span
+                  className="flex items-center gap-1.5 text-[10px] font-semibold px-2.5 py-1 rounded-full text-white"
+                  style={{ background: d.accent }}
+                >
+                  <StarIcon />
+                  {d.airline}
+                </span>
+                <span className="text-[10px] font-medium text-white/70 bg-black/30 backdrop-blur-sm px-2 py-1 rounded-full">
+                  {d.batch}
                 </span>
               </div>
 
-              {/* Bottom Content Area */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-7 flex items-end justify-between gap-4">
-                <div>
-                  <h3
-                    className="text-2xl font-bold text-white mb-2 leading-tight group-hover:text-amber-300 transition-colors"
-                    style={{ fontFamily: '"Space Grotesk", sans-serif' }}
+              {/* Bottom content */}
+              <div className="absolute bottom-0 left-0 right-0 p-5">
+                <span
+                  className="inline-block text-[10px] font-semibold px-2.5 py-0.5 rounded-full mb-3"
+                  style={{
+                    background: "rgba(255,255,255,0.15)",
+                    color: "rgba(255,255,255,0.9)",
+                    backdropFilter: "blur(8px)",
+                    border: "1px solid rgba(255,255,255,0.2)",
+                  }}
+                >
+                  {d.role}
+                </span>
+                <div className="flex items-end justify-between gap-2">
+                  <div>
+                    <p
+                      className="text-white font-semibold text-base leading-tight"
+                      style={{ fontFamily: '"Space Grotesk", sans-serif' }}
+                    >
+                      {d.student}
+                    </p>
+                    <p className="text-white/60 text-xs mt-0.5">{d.city}</p>
+                  </div>
+                  <div
+                    className="shrink-0 w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110"
+                    style={{ background: d.accent }}
                   >
-                    {d.country}
-                  </h3>
-                  <p className="text-xs sm:text-sm leading-relaxed text-slate-300 max-w-[210px] line-clamp-3">
-                    {d.detail}
-                  </p>
-                </div>
-
-                {/* Interactive Arrow Button */}
-                <div className="flex-none w-11 h-11 rounded-full border border-white/30 bg-white/10 backdrop-blur-md flex items-center justify-center transition-all duration-300 group-hover:bg-[#00529b] group-hover:border-[#00529b] group-hover:scale-110">
-                  <ArrowUpRight className="w-5 h-5 text-white transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <ArrowUpRight className="w-4 h-4 text-white" />
+                  </div>
                 </div>
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      
     </section>
   );
 }
