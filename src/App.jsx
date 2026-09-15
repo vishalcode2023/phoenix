@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { HelmetProvider } from "react-helmet-async";
 import MainRouter from "./Router/MainRouter";
-import LoadingScreen from "./components/LoadingScreen";
+import LoadingScreen from "./Components/LoadingScreen";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
