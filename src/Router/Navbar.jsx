@@ -21,10 +21,6 @@ const navLinks = [
     ],
   },
   {
-    name: "Faculty",
-    path: "/faculty",
-  },
-  {
     name: "About us",
     path: "/aboutus",
   },

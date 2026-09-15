@@ -4,7 +4,7 @@ import AboutPageContent from "../Components/AboutPageContent";
 import ContactPage from "../Components/ContactPage";
 import CabinCrewCoursePage from "../Components/CabinCrewCoursePage";
 import AirportGroundOperationsPage from "../Components/AirportGroundOperationsPage";
-import FacultyPage from "../Components/FacultyPage";
+
 
 const MainRouter = () => {
   return (
@@ -19,7 +19,7 @@ const MainRouter = () => {
           path="/courses/airport-ground-services"
           element={<AirportGroundOperationsPage />}
         />
-        <Route path="/faculty" element={<FacultyPage />} />
+        {/* <Route path="/faculty" element={<FacultyPage />} /> */}
         <Route path="/aboutus" element={<AboutPageContent />} />
         <Route path="/contact" element={<ContactPage />} />
       </Routes>

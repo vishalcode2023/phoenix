@@ -211,22 +211,12 @@ export default function AboutPageContent() {
           <div className="lg:col-span-5">
             <div className="relative rounded-3xl overflow-hidden border border-slate-200/80 shadow-2xl bg-slate-900 group">
               <img
-                src="/img-mob.png"
+                src="/img5.jpeg"
                 alt="Cabin Crew Practical Training"
                 className="w-full h-[460px] object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 text-white">
-                <span className="text-amber-400 text-xs font-semibold uppercase tracking-wider">
-                  Hands-On Flight Simulators
-                </span>
-                <h3
-                  className="text-xl font-bold mt-1"
-                  
-                >
-                  Practical Cabin & Safety Training
-                </h3>
-              </div>
+              
             </div>
           </div>
         </div>

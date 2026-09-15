@@ -285,36 +285,12 @@ export default function FacultyPage() {
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
               <img
-                src="/faculty-training.png"
+                src="/img5.jpeg"
                 alt="Faculty training students"
                 className="w-full h-full object-cover"
               />
 
               <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
-
-              <div className="absolute bottom-5 left-5 right-5">
-                <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4">
-                  <p className="text-xs font-semibold text-sky-300 mb-1">
-                    Learn from experience
-                  </p>
-                  <p className="text-sm font-semibold text-white">
-                    Practical knowledge. Professional guidance. Real career
-                    preparation.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="absolute -bottom-5 -left-5 bg-white border border-gray-200 shadow-lg rounded-2xl px-5 py-4">
-              <div
-                className="text-2xl font-semibold text-[#f05123]"
-                style={{ fontFamily: '"Space Grotesk", sans-serif' }}
-              >
-                360°
-              </div>
-              <div className="text-xs text-gray-400 mt-0.5">
-                Student development
-              </div>
             </div>
           </div>
         </div>
@@ -543,8 +519,6 @@ export default function FacultyPage() {
           </div>
         </div>
       </section>
-
-      
 
       <Footer />
     </div>

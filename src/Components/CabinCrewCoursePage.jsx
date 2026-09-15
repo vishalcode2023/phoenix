@@ -621,7 +621,7 @@ export default function CabinCrewCoursePage() {
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden aspect-[4/5]">
               <img
-                src="/img-mob.png"
+                src="/gowda.jpeg"
                 alt="Airline Training"
                 className="w-full h-full object-cover"
               />
@@ -631,11 +631,11 @@ export default function CabinCrewCoursePage() {
               <div className="absolute bottom-5 left-5 right-5">
                 <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4">
                   <p className="text-xs font-semibold text-sky-300 mb-1">
-                    Practical exposure
+                    Shravya M R
                   </p>
 
                   <p className="text-sm font-semibold text-white">
-                    Mock Cabin Simulation & Air Hostess Labs
+                    Cabin Safety Trainer
                   </p>
                 </div>
               </div>
@@ -662,7 +662,7 @@ export default function CabinCrewCoursePage() {
                   fontFamily: '"Space Grotesk", sans-serif',
                 }}
               >
-                200+
+                100+
               </div>
 
               <div className="text-xs text-gray-400 mt-0.5">
@@ -1178,8 +1178,6 @@ export default function CabinCrewCoursePage() {
 
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              
-
               <Link
                 to="/contact"
                 className="
