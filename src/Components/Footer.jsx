@@ -77,9 +77,9 @@ export default function Footer({
     },
   ],
 
-  phones = ["+91 97314 32324", "+91 93806 79590"],
+  phones = ["+91 98869 22036"],
 
-  emails = ["info@phoenixacademy.com"],
+  emails = ["infophoenixacadem@gmail.com"],
 
   socials = ["facebook", "instagram", "twitter", "linkedin"],
 }) {

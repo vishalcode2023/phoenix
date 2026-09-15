@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../Router/Navbar";
 import Footer from "./Footer";
 
+
 const airlinePartners = [
   {
     name: "Air India",
@@ -32,7 +33,7 @@ const airlinePartners = [
 export default function AboutPageContent() {
   return (
     <div className="w-full bg-slate-50 text-slate-800 min-h-screen">
-     
+     <SEO {...SEO_CONFIG.home} />
 
       {/* ==========================================
           1. HERO SECTION WITH EMBEDDED NAVBAR

@@ -1,11 +1,18 @@
-import MainRouter from "./Router/MainRouter"
+import { useState } from "react";
+import { HelmetProvider } from "react-helmet-async";
+import MainRouter from "./Router/MainRouter";
+import LoadingScreen from "./components/LoadingScreen";
 
 const App = () => {
-  return (
-    <div>
-      <MainRouter/>
-    </div>
-  )
-}
+  const [loading, setLoading] = useState(true);
 
-export default App
+  return (
+    <HelmetProvider>
+      {loading && <LoadingScreen onComplete={() => setLoading(false)} />}
+
+      <MainRouter />
+    </HelmetProvider>
+  );
+};
+
+export default App;

@@ -114,10 +114,7 @@ export default function ContactPage() {
                   Phone & WhatsApp
                 </h4>
                 <p className="text-sm text-slate-600 mt-1">
-                  Admissions: +91 98765 43210
-                </p>
-                <p className="text-sm text-slate-600">
-                  Helpdesk: +91 821 234 5678
+                  Admissions: +91  98869 22036
                 </p>
               </div>
             </div>
@@ -131,11 +128,9 @@ export default function ContactPage() {
                 <h4 className="font-semibold text-slate-900 text-base">
                   Email Inquiries
                 </h4>
-                <p className="text-sm text-slate-600 mt-1">
-                  admissions@phoenixaviation.in
-                </p>
+               
                 <p className="text-sm text-slate-600">
-                  info@phoenixaviation.in
+                  infophoenixacadem@gmail.com
                 </p>
               </div>
             </div>
