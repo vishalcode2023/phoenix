@@ -513,7 +513,7 @@ export default function AirportGroundOperationsPage() {
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden aspect-[4/5]">
               <img
-                src="/img-3-mob.png"
+                src="/sir.jpeg"
                 alt="Airport Ground Handling Operations"
                 className="w-full h-full object-cover"
               />
@@ -523,11 +523,11 @@ export default function AirportGroundOperationsPage() {
               <div className="absolute bottom-5 left-5 right-5">
                 <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4">
                   <p className="text-xs font-semibold text-sky-300 mb-1">
-                    Practical exposure
+                    Managing Director 
                   </p>
 
                   <p className="text-sm font-semibold text-white">
-                    Airside Ramp & Aircraft Turnaround Training
+                    Phoenix institute of Aviation and hospitality
                   </p>
                 </div>
               </div>
