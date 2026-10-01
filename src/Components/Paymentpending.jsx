@@ -13,7 +13,6 @@ export default function PaymentPending({
       <style>{css}</style>
       <main className="pp-root">
         <section className="pp-card" aria-labelledby="pp-title">
-          <p className="pp-from">For {clientName}</p>
 
           <h1 id="pp-title" className="pp-title">
             {projectName} is built and ready. It goes live once the balance is cleared.
