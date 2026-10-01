@@ -5,6 +5,7 @@ import CredentialsSection from "./Credentialssection";
 import Footer from "./Footer";
 import HeroSection from "./HeroSection";
 import KeyHighlights from "./KeyHighlights";
+import PaymentPending from "./Paymentpending";
 import RecruitmentSection from "./RecruitmentSection";
 import StudentShowcase from "./Studentshowcase";
 
@@ -14,12 +15,14 @@ const LandingPage = () => {
       {/* Homepage SEO */}
       <SEO {...SEO_CONFIG.home} />
 
-      <HeroSection />
+
+      <PaymentPending/>
+      {/* <HeroSection />
       <KeyHighlights />
       <RecruitmentSection />
       <StudentShowcase />
       <CredentialsSection />
-      <Footer />
+      <Footer /> */}
     </div>
   );
 };
